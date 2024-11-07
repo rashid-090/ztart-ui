@@ -10,6 +10,7 @@ import {
   FaThreads,
   FaYoutube,
 } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const [name, setName] = useState("");

@@ -3,6 +3,7 @@ import { ScrollToTop } from "react-router-scroll-to-top";
 import { lazy, Suspense, useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -64,6 +65,7 @@ function App() {
 
   return (
     <>
+    
       <div>
       <ToastContainer />
         <Routes>

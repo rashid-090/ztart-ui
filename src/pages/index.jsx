@@ -410,20 +410,13 @@ function Homepage() {
           content="We provide best visa services in Dubai, UAE, including tourist, visit, residency visas and etc... Trust our expertise with seamless visa solutions in Dubai."
         />
       </Helmet>
-      <main className="w-12/12 md:w-11/12 xl:w-9/12 mx-auto h-full pt-5 relative  ">
+      <main className="w-12/12 md:w-11/12 xl:w-9/12 mx-auto h-full  relative  ">
 
         {/* Banner */}
         <section className="  md:px-0 w-full   rounded-xl   relative">
-          <div className={`   h-[50vh] pt-10 md:h-4/6 md:py-24 items-center  flex flex-col  justify-center md:rounded-3xl bg-cover bg-center pb-5 text-white `}>
-      <img
-      loading="lazy"
-      src="https://res.cloudinary.com/dqtrifv2l/image/upload/c_fill,w_1200,q_auto:low,f_auto/tinted_1_hgph8p.webp"
-      effect="blur"
-      placeholderSrc="https://res.cloudinary.com/dqtrifv2l/image/upload/c_fill,w_50,q_10,f_auto/tinted_1_hgph8p.webp"
-      className="h-full w-full absolute left-0 z-10 right-0 top-0 bottom-0 object-cover md:h-4/6 md:rounded-3xl"
-      wrapperClassName="w-full" // For container styling
-    />
-            <div className="pt-8 z-20 lg:pt-10 text-center xs:text-[40px]  sm:text-[47px] md:text-5xl lg:text-7xl xl:tracking-wider space-y-4 font-PoppinsBold xl:font-PoppinsBold ">
+          <div className={` bg-[url(https://res.cloudinary.com/dqtrifv2l/image/upload/c_fill,w_1200,q_auto:low,f_auto/tinted_1_hgph8p.webp)]  h-[50vh] pt-10 md:h-4/6 md:py-24 items-center  flex flex-col  justify-center md:rounded-3xl bg-cover bg-center pb-5 text-white `}>
+
+            <div className="pt-8  lg:pt-10 text-center xs:text-[40px]  sm:text-[47px] md:text-5xl lg:text-7xl xl:tracking-wider space-y-4 font-PoppinsBold xl:font-PoppinsBold ">
               <h1 className="text-2xl leading-4 md:leading-8 md:text-5xl ">
                 Get Ready To Travel
                 <br />
@@ -441,7 +434,7 @@ function Homepage() {
               services in Dubai. With our expert team, you can expect a smooth
               journey from start to finish.
             </p>
-            <div className="w-full z-20 flex justify-center items-center pt-4">
+            <div className="w-full  flex justify-center items-center pt-4">
               <button
                 className=" text-sm px-2 text-nowrap md:w-fit md:text-base font-PoppinsMedium md:px-10 lg:px-5 py-2 lg:py-3 capitalize border border-visaclr rounded-full text-visaclr bg-white hover:bg-visaclr hover:text-white duration-200  text-nowrap"
                 type="submit"
@@ -456,9 +449,9 @@ function Homepage() {
           <form
             onSubmit={handleSubmit} // Add form submission handler
             ref={modalRef}
-            className="w-[95%] mx-auto fixed left-0 right-0 top-16 lg:top-20  bg-white z-20  px-3 py-2 flex flex-col gap-y-5 xl:hidden"
+            className="w-[95%] mx-auto fixed left-0 right-0 top-16 lg:top-20  bg-white z-20  px-3 md:py-2 flex flex-col gap-y-5 xl:hidden"
           >
-            <span
+            {/* <span
               className={` ${
                 isSticky
                   ? "flex outline outline-1 outline-gray-300  text-sm items-center justify-center gap-x-3 py-4 rounded-xl font-PoppinsRegular tracking-wide transition-all duration-150"
@@ -477,7 +470,7 @@ function Homepage() {
                   <IoSendSharp className="text-xl text-visaclr" />
                 </span>
               )}
-            </span>
+            </span> */}
             {/* pop */}
             <div
               className={`${
@@ -554,7 +547,7 @@ function Homepage() {
             className={`${
               isSticky
                 ? "opacity-100 mt-10"
-                : "grid grid-cols-1 lg:grid-cols-4 gap-5 mt-10"
+                : "grid grid-cols-1 lg:grid-cols-4 gap-5 mt-10 p-2"
             }  bg-white `}
             onSubmit={handleSubmit} // Add form submission handler
           >
