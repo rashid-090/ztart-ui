@@ -8,7 +8,7 @@ const Faq = () => {
     <>
       <Helmet>
         <title>Answers for your Visa Questions | Ztartvisa FAQs</title>
-        <link rel="canonical" href={`https://ztartvisa.com/blogs/faq`} />
+        <link rel="canonical" href={`https://ztartvisa.com/faq`} />
         <meta
           name="description"
           content="Can't find the answer to your visa question? Check out our FAQ page for quick and easy answers to common visa queries. Ztartvisa Dubai, UAE.

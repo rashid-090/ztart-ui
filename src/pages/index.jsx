@@ -405,6 +405,10 @@ function Homepage() {
         <title>
           Best Visa Services in Dubai, Schengen Visa Consultancy in Dubai
         </title>
+        <link
+          rel="canonical"
+          href={`https://ztartvisa.com`}
+        />
         <meta
           name="description"
           content="We provide best visa services in Dubai, UAE, including tourist, visit, residency visas and etc... Trust our expertise with seamless visa solutions in Dubai."
