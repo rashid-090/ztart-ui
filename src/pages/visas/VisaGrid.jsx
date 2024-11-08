@@ -63,7 +63,7 @@ const VisaGrid = () => {
         />
         <link rel="canonical" href="https://ztartvisa.com/visa" />
       </Helmet>
-      <div className="container mx-auto  py-8 ">
+      <div className=" mx-auto  py-8 ">
         <h1 className=" text-2xl lg:text-6xl font-PoppinsExtraBold text-center px-3 md:px-0  mt-20 text-visaclr">
           Popular Visas
           <span className="text-black text-3xl md:text-6xl"> from UAE</span>
@@ -72,7 +72,7 @@ const VisaGrid = () => {
           Your First Choice for the Most Requested Visas
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 xl:gap-10">
           {visaData.reverse().map((visa, index) => (
             <div
               key={index}
@@ -81,7 +81,7 @@ const VisaGrid = () => {
               <img
                 src={visa.imageURL} // Assuming this is the image URL
                 alt={visa.title}
-                className="w-full h-48 sm:h-52 md:h-56 object-left-bottom object-cover cursor-pointer"
+                className="w-full h-32 sm:h-32 md:h-56 object-left-bottom object-cover cursor-pointer"
               />
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{visa.country}</h2>

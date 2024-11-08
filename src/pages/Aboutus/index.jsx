@@ -1,6 +1,6 @@
 import React from "react";
 import { AboutImageData, InstaData } from "../../components/Constant";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 function AboutUs() {
@@ -66,9 +66,9 @@ function AboutUs() {
             getting a visa can be!
           </p>
           <div className="w-full hidden md:flex justify-center align-middle">
-            <button className="bg-visaclr text-base lg:text-lg text-white rounded-3xl hover:bg-visaclrhvr duration-150 px-24 py-2.5">
+            <Link to={'/visa'} className="bg-visaclr text-base lg:text-lg text-white rounded-3xl hover:bg-visaclrhvr duration-150 px-24 py-2.5">
               Travel better
-            </button>
+            </Link>
           </div>
         </div>
         {/*  */}
