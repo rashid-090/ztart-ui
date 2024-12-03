@@ -76,7 +76,7 @@ const Blog = () => {
               className="flex flex-col gap-2 shadow-xl shadow-gray-300 p-5 group"
             >
               <img
-                onClick={() => navigate(`/blogs/${bdata?._id}`)}
+                onClick={() => navigate(`/blogs/${bdata?.slug}`)}
                 className="object-cover cursor-pointer h-52 object-left-bottom xl:group-hover:scale-105 duration-300"
                 src={bdata?.imageURL} // Assuming this is the image URL
                 alt={bdata?.title}
