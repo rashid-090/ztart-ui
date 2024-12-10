@@ -7,16 +7,48 @@ import axios from 'axios';
 
 async function generateSitemap() {
 
-  const baseUrl = 'http://localhost:3000'
+  const baseUrl = 'https://ztart-server-production.up.railway.app'
 
   try {
     // Fetch dynamic data
     const [blogsResponse, visasResponse] = await Promise.all([
       axios.get(`${baseUrl}/api/1.0/user/blog/get-blog-slug`),   // Replace with your blogs pages API endpoint
       axios.get(`${baseUrl}/api/1.0/user/testimonial/get-visa-slug`)  // Replace with your visa API endpoint
+      
     ]);
     // return console.log(blogsResponse.data, visasResponse.data);
-
+    const staticPages = [
+      {
+        url: `/about`,
+      changefreq: 'monthly',
+      priority: 0.7
+      },
+      {
+        url: `/faq`,
+      changefreq: 'monthly',
+      priority: 0.7
+      },
+      {
+        url: `/contact`,
+      changefreq: 'monthly',
+      priority: 0.7
+      },
+      {
+        url: `/privacy-policy`,
+      changefreq: 'monthly',
+      priority: 0.7
+      },
+      {
+        url: `/visa`,
+      changefreq: 'monthly',
+      priority: 0.7
+      },
+      {
+        url: `/blogs`,
+      changefreq: 'monthly',
+      priority: 0.7
+      },
+    ]
     const blogLinks = blogsResponse.data.data.map(blog => ({
       url: `/blogs/${blog.slug}`,
       changefreq: 'monthly',
@@ -31,7 +63,7 @@ async function generateSitemap() {
 
 
     // Combine all links
-    const links = [...blogLinks, ...visaLinks];
+    const links = [...blogLinks, ...visaLinks,...staticPages];
 
     // Create a sitemap stream
     const stream = new SitemapStream({ hostname: 'https://ztartvisa.com' });
