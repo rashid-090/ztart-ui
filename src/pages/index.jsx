@@ -409,10 +409,13 @@ function Homepage() {
           rel="canonical"
           href={`https://ztartvisa.com`}
         />
+        <meta name="keywords" content="Visa Service in Dubai, Best Visa service in Dubai, Visa Services in Dubai, Best Visa Services in Dubai, Best Visa Service in UAE, Visa Agency in Dubai, Best Visa agency in Dubai, Visa Agents in Dubai, Best Visa Agents in Dubai, Visa Consultant in Dubai, Best Visa Consultant in Dubai, Visa Consultants in Dubai, Best Visa Consultants in Dubai, Visa Consultancy in Dubai, Best Visa Consultancy in Dubai, Schengen Visa Consultant in Dubai, Schengen Visa Consultants in Dubai, Schengen Visa Consultancy in Dubai, Best Schengen Visa Consultant in Dubai, Best Schengen Visa Consultants in Dubai, Best Schengen Visa Consultancy in Dubai, Tourist visa from from, Visit visa from Dubai"/>
         <meta
           name="description"
           content="We provide best visa services in Dubai, UAE, including tourist, visit, residency visas and etc... Trust our expertise with seamless visa solutions in Dubai."
         />
+        <meta property="og:title" content="Best Visa service in Dubai | Visa Agency in Dubai, UAE"/>
+        <meta property="og:description" content="Simplify your travel dreams with Ztartvisa. Best Visa services in Dubai, UAE offering expert guidance & efficient processing for all visa types."/>
       </Helmet>
       <main className="w-12/12 md:w-11/12 xl:w-9/12 mx-auto h-full  relative  ">
 
@@ -718,7 +721,7 @@ function Homepage() {
                   </h4>
                 </span>
                 <p className="pl-6 text-sm lg:text-base">
-                  Ztartvisa hndles your visa needs efficiently, ensuring smooth
+                  Ztartvisa handles your visa needs efficiently, ensuring smooth
                   and timely approvals for both travel and business trips.
                 </p>
               </div>

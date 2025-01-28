@@ -10,7 +10,13 @@ import Demo from "./Carousals/Demo";
 import InsatFeed from "./InstaFeed/index";
 import LandHeader from "./Header/lheader.jsx";
 
+
+import Testimonial2 from "./Carousals/test/Testimonials";
+import Faq2 from "./Carousals/test/Faq";
+
 export{
+    Testimonial2,
+    Faq2,
     InsatFeed,
     Header,
     Footer,

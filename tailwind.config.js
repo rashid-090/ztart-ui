@@ -17,6 +17,7 @@ module.exports = {
      colors:{
        'visaclr': '#009A92',
        'visaclrhvr': '#0b837d',
+       'visaclr2': '#eaf7b3',
 
      },
      fontFamily: {
@@ -29,6 +30,7 @@ module.exports = {
      },
      backgroundImage: {
       'cta-bg': "url('./assets/images/visas/cta.webp')",
+      'ptg-bg': "url('./assets/newbg.png')",
     }
    },
   

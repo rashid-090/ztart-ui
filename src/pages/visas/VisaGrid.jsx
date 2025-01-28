@@ -57,11 +57,14 @@ const VisaGrid = () => {
     <>
       <Helmet>
         <title>Best Visa Agency In Dubai, Visa Assistance In Dubai UAE</title>
+        <link rel="canonical" href="https://ztartvisa.com/visa" />
+        <meta name="keywords" content="Visa Service in Dubai, Best Visa service in Dubai, Visa Services in Dubai, Best Visa Services in Dubai, Best Visa Service in UAE, Visa Agency in Dubai, Best Visa agency in Dubai, Visa Agents in Dubai, Best Visa Agents in Dubai"/>
         <meta
           name="description"
           content="Best Visa Agency in Dubai offering expert visa assistance for tourists and businesses in Dubai, UAE. Trust us for a smooth and efficient visa process."
         />
-        <link rel="canonical" href="https://ztartvisa.com/visa" />
+        <meta property="og:title" content="Visa Agency in Dubai | Best Visa Agents in Dubai, UAE"/>
+        <meta property="og:description" content="We are leading Visa Agency in Dubai, offering expert guidance and support for all visa types with our team of Best Visa Agents in Dubai UAE"/>
       </Helmet>
       <div className=" mx-auto  py-8 ">
         <h1 className=" text-2xl lg:text-6xl font-PoppinsExtraBold text-center px-3 md:px-0  mt-20 text-visaclr">
@@ -84,7 +87,7 @@ const VisaGrid = () => {
                 className="w-full h-32 sm:h-32 md:h-56 object-left-bottom object-cover cursor-pointer"
               />
               <div className="p-4">
-                <h2 className="text-xl font-semibold mb-2">{visa.country}</h2>
+                <h2 className="text-xl font-semibold mb-2 capitalize">{visa.country}</h2>
                 <button
                   onClick={() => navigate(`/visa/${visa.slug}`)} // Assuming `url` is part of the visa data
                   className="bg-visaclr font-PoppinsMedium px-2 text-sm py-1 rounded-lg text-white w-fit"a

@@ -132,7 +132,7 @@ function Footer() {
         </div>
 
         <div className="">
-          <h2 className="text-base lg:text-lg font-PoppinsSemibold">
+          <h2 className="text-base lg:text-lg uppercase font-PoppinsSemibold">
             About Us
           </h2>
           <ul className="text-base pt-5 flex flex-col gap-2">
@@ -154,7 +154,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="text-base lg:text-lg font-PoppinsSemibold">
+          <h2 className="text-base lg:text-lg uppercase font-PoppinsSemibold">
             Contact Us
           </h2>
           <ul className="text-base pt-5 flex flex-col gap-2">
@@ -168,7 +168,7 @@ function Footer() {
         </div>
 
         <div className="col-span-2 md:col-span-1">
-          <h2 className="text-base lg:text-lg font-PoppinsSemibold">Visas</h2>
+          <h2 className="text-base lg:text-lg uppercase font-PoppinsSemibold">Visas</h2>
           <ul className="text-base pt-5 grid grid-cols-2 gap-2 capitalize">
             {visas?.slice(0, 10).reverse().map((visa, i) => (
               <li

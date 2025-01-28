@@ -263,8 +263,12 @@ function LandingPage() {
       <Helmet>
       <title>Ztartvisa Your Expert Visa Consultant in Dubai
       </title>
+        <link rel="canonical" href={`https://ztartvisa.com/visa-consultant-in-dubai`} />
+        <meta name="keywords" content="Visa Consultant in Dubai, Best Visa Consultant in Dubai, Visa Consultants in Dubai, Best, Visa Consultants in Dubai, Visa Consultancy in Dubai, Best Visa Consultancy in Dubai, Schengen Visa Consultant in Dubai, Schengen Visa Consultants in Dubai, Schengen Visa Consultancy in Dubai, Best Schengen Visa Consultant in Dubai, Best Schengen Visa Consultants in Dubai, Best Schengen Visa Consultancy in Dubai"/>
         <meta name="description" content="We are the top visa consultant in Dubai, UAE, offer end-to-end visa services, handling all documentation for Tourist, Visit, Business & Schengen Visas etc" />
-  <link rel="canonical" href={`https://ztartvisa.com/visa-consultant-in-dubai`} />
+        <meta property="og:title" content="Visa Consultant in Dubai | Schengen Visa Consultancy in Dubai"/>
+        <meta property="og:description" content="Top Visa Consultant in Dubai offer expert guidance for Business, Tourist, and Schengen Visa from Dubai, ensuring a smooth application process."/>
+
       </Helmet>
       <main className="w-11/12 md:w-11/12 xl:w-9/12 mx-auto h-full">
         {/* Banner */}

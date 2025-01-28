@@ -11,7 +11,7 @@ const UserLayout = () => {
 
   return (
     <div className="app">
-      <LandHeader />
+     {location.pathname !== "/test2" && <LandHeader />}
       <ScrollToTop />
       <ToastContainer
         position="top-right"
@@ -20,7 +20,7 @@ const UserLayout = () => {
         closeOnClick
       />
       <Outlet />
-      <Footer />
+      {location.pathname !== "/test2" && <Footer />}
     </div>
   );
 };

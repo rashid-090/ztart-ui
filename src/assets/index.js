@@ -117,7 +117,19 @@ import blog8pic from './images/blog/blog8.webp'
 import blog9pic from './images/blog/blog9.webp'
 import blog10pic from './images/blog/blog10.webp'
 
+
+import stand1 from './images/new/Free visa consultation.svg'
+import stand2 from './images/new/Application preparation.svg'
+import stand3 from './images/new/Doorstep document delivery.svg'
+import stand4 from './images/new/Personalized support.svg'
+import bann1 from './images/new/nb1.webp'
+import bann2 from './images/new/nb2.webp'
+import bann3 from './images/new/nb3.webp'
+import aarow from './images/new/arrows.svg'
+import baan22 from './images/new/visabaan2.webp'
+
 export{
+    stand1,stand2,stand3,stand4,bann1,bann2,bann3,aarow,baan22,
     blog1pic,blog2pic,blog3pic,blog4pic,blog5pic,blog6pic,blog7pic,blog8pic,blog9pic,blog10pic,
     turkeyVisa,japanVisa,usaVisa,
     placeholderplace,

@@ -87,7 +87,12 @@ html {
   color: #fff;
   background: #009A92;
 }
-
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}
 body {
   /* max-width: 1550px; */
     margin: 0 auto;
@@ -479,3 +484,31 @@ backdrop-filter: blur(2.9px);
    }
 
  }
+
+ @keyframes lineProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes dotFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-dot {
+  animation: dotFadeIn .5s ease-in-out forwards;
+}
+
+.animate-line-progress {
+  animation: lineProgress 2s ease-in-out forwards;
+}

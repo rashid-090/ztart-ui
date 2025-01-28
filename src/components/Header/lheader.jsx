@@ -157,7 +157,7 @@ function LandHeader() {
           alt="Logo"
         />
 
-        <ul className="text-base font-PoppinsMedium hidden xl:flex items-center gap-5">
+        <ul className="text-base  hidden xl:flex items-center gap-5">
           <li>
             <Link
               className="hover:text-visaclr duration-200 "

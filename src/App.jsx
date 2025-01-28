@@ -15,6 +15,8 @@ import {
 import { Header, Footer, Loader, NotFoundPage, LandHeader } from "./components";
 import UserLayout from "./layouts/UserLayout";
 import Homepage from "./pages/index";
+import Hometest from "./pages/test";
+import Hometest2 from "./pages/test2";
 import AboutUs from "./pages/Aboutus/index";
 import Faq from "./pages/Faq/index";
 import VisaInner from "./pages/visas/inner";
@@ -85,6 +87,8 @@ function App() {
             <Route element={<UserLayout />}>
               <Route path="/login" element={<LoginPage  setAdmin={setAdmin}/>} />
               <Route path="/" element={<Homepage />} />
+              <Route path="/test" element={<Hometest />} />
+              <Route path="/test2" element={<Hometest2 />} />
               <Route path="/visa" element={<VisaGrid />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/faq" element={<Faq />} />
