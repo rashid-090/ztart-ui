@@ -100,7 +100,7 @@ const Testimonails = () => {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
@@ -111,7 +111,7 @@ const Testimonails = () => {
       <Slider {...settings}>
         {CustomerTestimonails.map((testi, i) => (
           <div key={i} className="p-1 md:p-2 mt-5 z-10">
-            <div className=" hover:bg-gray-100 duration-200 border border-gray-100 text-gray-600  h-80 p-5 rounded-lg flex flex-col text-center gap-1  justify-center relative">
+            <div className="bg-gray-100 hover:bg-gray-100 duration-200 border border-gray-100 text-gray-600 h-full  md:h-80 p-5 rounded-lg flex flex-col text-center gap-1  justify-center relative">
               <RiDoubleQuotesL className="text-6xl text-visaclr" />
 
               <p className="text-[10px] md:text-sm text-gray-500">{testi.desc}</p>

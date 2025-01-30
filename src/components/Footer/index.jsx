@@ -79,11 +79,11 @@ function Footer() {
         <div className="col-span-2 md:col-span-1">
           <Link to="/">
             <img
-              className="h-7 lg:h-9 object-contain"
+              className="h-7 lg:h-12 object-contain"
               src={VisaLogo}
               alt="logo"
-              width={100} // Replace with the actual width
-              height={50} // Replace with the actual height
+              width={150} // Replace with the actual width
+              height={80} // Replace with the actual height
             />
           </Link>
           <ul className="text-visaclr flex gap-3 mt-5 ml-2 text-2xl">

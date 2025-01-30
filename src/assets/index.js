@@ -125,11 +125,17 @@ import stand4 from './images/new/Personalized support.svg'
 import bann1 from './images/new/nb1.webp'
 import bann2 from './images/new/nb2.webp'
 import bann3 from './images/new/nb3.webp'
+import bann4 from './images/new/baan4.webp'
+import bann5 from './images/new/baan5.webp'
 import aarow from './images/new/arrows.svg'
 import baan22 from './images/new/visabaan2.webp'
+import tick from './images/new/check-mark.svg'
+
+import aeorplane1 from './images/new/airplane1.svg'
+import aeorplane2 from './images/new/airplane2.svg'
 
 export{
-    stand1,stand2,stand3,stand4,bann1,bann2,bann3,aarow,baan22,
+    stand1,stand2,stand3,stand4,bann1,bann2,bann3,aarow,baan22,bann4,bann5,aeorplane1,aeorplane2,tick,
     blog1pic,blog2pic,blog3pic,blog4pic,blog5pic,blog6pic,blog7pic,blog8pic,blog9pic,blog10pic,
     turkeyVisa,japanVisa,usaVisa,
     placeholderplace,

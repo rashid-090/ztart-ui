@@ -14,7 +14,15 @@ import LandHeader from "./Header/lheader.jsx";
 import Testimonial2 from "./Carousals/test/Testimonials";
 import Faq2 from "./Carousals/test/Faq";
 
+import Newvisa from './new/visaCarousal'
+import HowweStand from './new/howweStand'
+import FastReliable from './new/fastReliable'
+import Whyztarts from './new/whyztart'
+import NewFaq from './new/faq'
+import NewHeader from './new/newHeader'
+
 export{
+    Newvisa,HowweStand,FastReliable,Whyztarts,NewFaq,NewHeader,
     Testimonial2,
     Faq2,
     InsatFeed,
