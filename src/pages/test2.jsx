@@ -151,20 +151,14 @@ const test2 = () => {
         <div className="bg-[#0000008b] absolute w-full h-full"></div>
         <div className="relative text-white flex flex-col gap-5 items-center justify-center text-center py-12 xl:py-32 w-[80%] mx-auto">
           <h4 className="text-2xl md:text-5xl font-PoppinsMedium uppercase">
-            Simplifying Your Visa Journey
+           Simplifying Your Visa Journey
           </h4>
           <p className="text-xs xl:text-base">
-            Are you worried about your visa application being denied or
-            frustrated with the long wait times and complicated process? At
-            Ztartvisa, we specialize in providing visa services in Dubai,
-            offering expert guidance every step of the way. Our team of
-            experienced visa consultants in Dubai is dedicated to making the
-            process as smooth and efficient as possible, ensuring you meet all
-            the requirements and avoid common pitfalls. Whether you're applying
-            for a tourist visa or visit visa, we are here to help you secure
-            your visa quickly and hassle-free, giving you peace of mind
-            throughout the entire process.
+              Tired of waiting and dealing with confusing visa steps? At Ztartvisa, we provide the best visa services in Dubai, making the process fast and simple. Our expert team helps you with every step to get your tourist or visit visa approved quickly and easily. Apply now for a stress-free experience.
           </p>
+          <button className="bg-white text-black px-5 shadow-xl py-3 text-sm font-PoppinsMedium rounded-full">
+          Contact Now
+          </button>
         </div>
       </section>
 

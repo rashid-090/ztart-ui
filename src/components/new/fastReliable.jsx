@@ -19,10 +19,9 @@ const FastReliable = () => {
                <img className='w-7 h-7' src={tick} alt="" />
               </div>
               <div>
-                <p className="text-base font-PoppinsBold">End To End Visa Assistance</p>
+                <p className="text-base xl:text-xl font-PoppinsBold">Easy Process</p>
                 <p className="text-xs md:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Fugiat, molestias.
+                We make the visa application simple, so you don’t have to worry about paperwork or deadlines
                 </p>
               </div>
             </div>
@@ -32,12 +31,11 @@ const FastReliable = () => {
               </div>
 
               <div>
-                <p className="text-base font-PoppinsBold">
-                  Visa Updates & Tracking in Real Time
+                <p className="text-base xl:text-xl font-PoppinsBold">
+                  Fast Services
                 </p>
                 <p className="text-xs md:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Fugiat, molestias.
+                Need your visa quickly? We offer fast processing to get your visa as soon as possible.
                 </p>
               </div>
             </div>
@@ -47,10 +45,9 @@ const FastReliable = () => {
               </div>
 
               <div>
-                <p className="text-base font-PoppinsBold">Save Time and Effort </p>
+                <p className="text-base xl:text-xl font-PoppinsBold">High Approval Rate</p>
                 <p className="text-xs md:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Fugiat, molestias.
+                We’ve helped many people get their visas, and they trust us to help again in the future.
                 </p>
               </div>
             </div>
@@ -60,12 +57,11 @@ const FastReliable = () => {
               </div>
 
               <div>
-                <p className="text-base font-PoppinsBold">
-                  Boost Your Chances of Visa Approval with Us
+                <p className="text-base xl:text-xl font-PoppinsBold">
+                  Worldwide Reach
                 </p>
                 <p className="text-xs md:text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Fugiat, molestias.
+                We can help you get a visa for almost any country you want to visit.
                 </p>
               </div>
             </div>

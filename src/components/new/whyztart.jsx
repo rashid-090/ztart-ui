@@ -70,8 +70,8 @@ const Whyztart = () => {
           <h4 className="text-2xl md:text-5xl font-PoppinsMedium uppercase transition-all duration-700 ease-in-out opacity-100">
             Why ZtartVisa is <span className="text-visaclr">Your<br /> Trusted Choice</span> for<br /> On-Time Visa Approval
           </h4>
-          <p className="text-sm md:text-basetext-opacity-100 transition-all duration-700 ease-in-out opacity-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br className='hidden md:block'/> Assumenda quisquam quam aliquam non esse.<br className='hidden md:block'/> Culpa laudantium voluptatem vitae facere tenetur!
+          <p className="text-sm xl:w-[70%] xl:text-justify md:text-basetext-opacity-100 transition-all duration-700 ease-in-out opacity-100">
+          ZtartVisa is your trusted choice for on-time visa approval because we provide the best visa services in Dubai helping you get your visa on time with no hassle. Whether it’s a tourist or visit visa, we’ve got you covered.
           </p>
           <button className="bg-visaclr text-xs md:text-sm font-PoppinsMedium uppercase text-white px-5 py-3 rounded-full transition-all duration-700 ease-in-out opacity-100">START YOUR VISA PROCESS</button>
         </div>
