@@ -148,7 +148,7 @@ const VisaCarousel = () => {
               >
                 <img
                    onClick={() => navigate(`/visa/${visa.slug}`)}
-                  className="rounded-xl cursor-pointer xl:rounded-3xl aspect-square object-cover shadow-lg"
+                  className="rounded-xl cursor-pointer xl:rounded-3xl aspect-square object-cover object-left-bottom shadow-lg"
                   src={visa?.imageURL}
                   alt={visa?.title}
                   
