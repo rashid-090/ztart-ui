@@ -5,7 +5,7 @@ import { bann1, bann2, bann3 } from '../../assets';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { vars } from "../../constents/Api";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Loader from '../Loading';
 const VisaCarousel = () => {
@@ -48,7 +48,7 @@ const VisaCarousel = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
     responsive: [
       {
         breakpoint: 1024,
@@ -61,7 +61,7 @@ const VisaCarousel = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
@@ -107,14 +107,12 @@ const VisaCarousel = () => {
       <section className="w-11/12 xl:w-10/12 mx-auto pt-10 2xl:pt-20 visacarousal2 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="col-span-2 space-y-2">
-            <h3 className="text-2xl md:text-5xl font-PoppinsMedium uppercase">
+            <h3 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">
               Your Preferred Choice
-              <br /> for the <span className="text-visaclr">Most In-Demand Visas</span>
+              <br /> for the <span className="text-visaclr">Most In-Demand Visa</span>
             </h3>
-            <p className='text-sm md:text-base'>
-              When it comes to securing the most in-demand visas, look no further.
-              <br className='hidden md:block'/>
-              Choosing us means you're partnering with the best visa agents in Dubai.
+            <p className='text-xs md:text-base'>
+            Your First Choice for the Most Requested Visa.
             </p>
           </div>
           <div className="flex items-center justify-end gap-3 z-10">
@@ -141,9 +139,9 @@ const VisaCarousel = () => {
             {visaData?.slice()
             .reverse()?.map((visa, index) => (
               <>
-              {console.log(visaData)}
+              {/* {console.log(visaData)} */}
               <div
-                key={index}
+             key={visa._id}
                 className="bg-gray-100 p-0 pb-2 md:p-5 rounded-3xl shadow-lg hover:shadow-xl duration-200 mb-10"
               >
                 <img
@@ -163,7 +161,7 @@ const VisaCarousel = () => {
                   sizes="(max-width: 800px) 100vw, 800px"
                 />
                 <div className="flex flex-col gap-2 items-center text-center pt-5">
-                  <h4 className="text-sm md:text-base xl:text-xl font-PoppinsBold uppercase">{visa?.country}</h4>
+                  <h4 className="text-sm md:text-base xl:text-xl font-PoppinsSemibold uppercase">{visa?.country}</h4>
                   <button onClick={() => navigate(`/visa/${visa.slug}`)} className="text-xs md:text-sm font-PoppinsLight bg-black tracking-widest capitalize text-white px-5 py-1.5 rounded-lg ">
                     explore
                   </button>
@@ -175,6 +173,13 @@ const VisaCarousel = () => {
         )  
         }
           
+        </div>
+        <div className='w-fit mx-auto pt-5'>
+        <Link to={'/visa'}>
+        <button className="bg-visaclr text-white px-5 xl:px-10 py-3 text-sm font-PoppinsMedium uppercase rounded-full">
+            view more
+          </button>
+          </Link>
         </div>
       </section>
     </>

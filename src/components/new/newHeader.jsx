@@ -64,7 +64,7 @@ const NewHeader = () => {
           src={VisaLogo}
           alt=""
         />
-        <ul className="hidden -ml-60  md:flex gap-5 items-center">
+        <ul className="hidden -ml-60  xl:flex gap-5 items-center">
           {myHeader?.map((dt, i) => (
             <Link to={dt.url} key={i}>
               {dt.title}

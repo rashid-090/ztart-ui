@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 const LandFAQ = [
   {
-    question: `What visa services do you offer in Dubai?`,
-    answer: `We provide a wide range of visa services, including Schengen Visa Assistance, Tourist Visas, Visit Visas, and Business Visas, all with expert guidance.`,
+    question: `What Visa services do you offer in Dubai?`,
+    answer: `We provide a wide range of Visa services, including Schengen Visa Assistance, Tourist Visa, Visit Visa, and Business Visa, all with expert guidance.`,
   },
   {
     question: `Are you a registered visa consultant in Dubai?`,
@@ -11,19 +11,19 @@ const LandFAQ = [
   },
   {
     question: `How long does it take to process a visa?`,
-    answer: `The time varies depending on the visa type and requirements, but we specialize in fast and efficient processing, especially for Schengen Visa applications in Dubai.`,
+    answer: `The time varies depending on the Visa type and requirements, but we specialize in fast and efficient processing, especially for Schengen Visa applications in Dubai.`,
   },
   {
-    question: `Can I apply for a visa online?`,
-    answer: `Yes, you can submit your application and documents online through our website, providing seamless visa services in Dubai.`,
+    question: `Can I apply for a Visa online?`,
+    answer: `Yes, you can submit your application and documents online through our website, providing seamless Visa services in Dubai.`,
   },
   {
-    question: `Do you assist with urgent visa applications?`,
+    question: `Do you assist with urgent Visa applications?`,
     answer: `Yes, we offer expedited services for urgent visa applications in Dubai. Contact us for further details.`,
   },
   {
-    question: `Do you assist with visa extensions or renewals?`,
-    answer: `Absolutely! We provide comprehensive assistance for visa extensions and renewals, ensuring continued support from your trusted visa agents in Dubai.`,
+    question: `Do you assist with Visa extensions or renewals?`,
+    answer: `Absolutely! We provide comprehensive assistance for Visa extensions and renewals, ensuring continued support from your trusted Visa agents in Dubai.`,
   },
 ];
 
@@ -42,7 +42,7 @@ const FAQItem = ({ question, answer }) => {
         } rounded-md md:gap-x-0  justify-between items-center  pl-0 p-4 cursor-pointer transition duration-300 ease-in-out `}
         onClick={toggleOpen}
       >
-        <div className=" text-sm md:text-base pl-5">{question}</div>
+        <div className=" text-xs md:text-base pl-5">{question}</div>
         <div
           className={`transform transition-transform ${
             isOpen ? "rotate-45" : "rotate-0"
@@ -64,15 +64,15 @@ const FAQItem = ({ question, answer }) => {
 const Faq = () => {
   return (
     <>
-      <section className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 py-10 xl:pb-20 xl:pt-20 gap-y-5">
+      <section className="w-11/12 xl:w-10/12 mx-auto grid grid-cols-1 xl:grid-cols-2 py-10 xl:pb-20 xl:pt-20 gap-y-5">
         <div className="h-full flex flex-col justify-center space-y-3">
-          <h5 className="text-2xl md:text-5xl font-PoppinsMedium uppercase text-center xl:text-left">
+          <h5 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase text-center xl:text-left">
             Frequently asked <span className="text-visaclr">questions?</span>
           </h5>
 
-          <p className=" text-base lg:text-base text-center xl:text-left ">
-            Here’s everything you need to know about
-            <br className="hidden md:block"/> our visa services in Dubai.
+          <p className="text-xs md:text-base lg:text-base text-center xl:text-left ">
+            Everything you need to know about
+            <br className="hidden md:block"/> our Visa services in Dubai.
           </p>
         </div>
         <div className="">

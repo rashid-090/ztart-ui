@@ -132,7 +132,7 @@ import baan22 from './images/new/visabaan2.webp'
 import tick from './images/new/check-mark.svg'
 
 import aeorplane1 from './images/new/airplane1.svg'
-import aeorplane2 from './images/new/airplane2.svg'
+import aeorplane2 from './images/new/areo3.svg'
 
 export{
     stand1,stand2,stand3,stand4,bann1,bann2,bann3,aarow,baan22,bann4,bann5,aeorplane1,aeorplane2,tick,

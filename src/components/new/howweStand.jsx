@@ -38,17 +38,19 @@ const HowweStand = () => {
       ref={sectionRef}
       className="w-11/12 xl:w-10/12 text-center mx-auto py-10 2xl:py-20"
     >
-      <h2 className="text-2xl md:text-5xl font-PoppinsMedium uppercase">
+      <h2 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">
         How We <span className="text-visaclr">Stand Out</span>
       </h2>
-      <p className="mt-4 text-sm md:text-base">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-        neque.
+      <p className="hidden md:block mt-4 text-sm md:text-base xl:w-[70%] mx-auto">
+      With a commitment to transparency, reliability, and customer satisfaction, we make your Visa application process stress-free and efficient.
+      </p>
+      <p className="md:hidden mt-4 text-xs md:text-base xl:w-[70%] mx-auto">
+      With a commitment to transparency, reliability, and customer satisfaction..
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 pt-20 relative">
+      <div className="grid grid-cols-4 gap-2 md:gap-5 pt-20 relative">
         {/* Progress Line and Dots */}
-        <div className="absolute w-[78%] transform -translate-x-1/2 left-1/2 flex items-center justify-between mt-10">
+        <div className="absolute w-[80%] xl:w-[78%] transform -translate-x-1/2 left-1/2 flex items-center justify-between mt-10">
           {/* Background Line */}
           <div className="absolute h-0.5 bg-gray-200 w-full">
             {/* Animated Progress Line */}
@@ -65,7 +67,7 @@ const HowweStand = () => {
             alt="Airplane"
             className="absolute top-[-15px] xl:top-[-18.5px] z-20 w-10 h-10 xl:w-12 xl:h-12 object-contain transition-all duration-[6000ms] ease-in-out"
             style={{
-              left: animate ? "98%" : "0%",
+              left: animate ? "99%" : "0%",
               transform: `translateX(-50%) rotate(${animate ? "43deg" : "43deg"})`,
             }}
           />
@@ -96,8 +98,8 @@ const HowweStand = () => {
               transitionDelay: `${index * 400 + 200}ms`,
             }}
           >
-            <img className="w-12 h-12 object-contain" src={step.icon} alt="" />
-            <h4 className="text-[10px] sm:text-xs md:text-sm font-PoppinsMedium text-center w-[80%] sm:w-[70%] 2xl:w-[55%] uppercase">
+            <img className="h-8 w-8 xl:w-12 xl:h-12 object-contain" src={step.icon} alt="" />
+            <h4 className="text-[8px] md:text-sm font-PoppinsMedium text-center w-[100%] 2xl:w-[55%] uppercase">
               {step.title}
             </h4>
           </div>

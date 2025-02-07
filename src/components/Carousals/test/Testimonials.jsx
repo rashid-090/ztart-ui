@@ -8,39 +8,40 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const CustomerTestimonails = [
   {
-    name: "Samual John",
-    desig: "Manager",
-    desc: "I got surprised to see the results! This lift is so compact, stylish & it doesn’t feel like there is any change in my apartment. Perfect option for people Residing in Apartments.",
+    name: `Anna Santos Villar`,
+    desc: `uae`,
+    desig: `It has been smooth sailing, hassle-free process. Thanks for your assistance! It took a while understandably because of the demand here in the UAE for Japan e-visa. But Ztsrtvisa is 100% legit! Our Japan trip was an unforgettable one!`,
   },
   {
-    name: "Michael Brown",
-    desig: "Engineer",
-    desc: "Amazing product and excellent support! The lift blends seamlessly into my house design. Highly recommend this to everyone looking for convenience and style.",
+    name: `abina arif`,
+    desc: `uae`,
+    desig: `Ztartvisa really helped me visit Europe. They were super nice and made it easy for me to get my Schengen visa. I think you'll like them too!`,
   },
   {
-    name: "Emily Davis",
-    desig: "Designer",
-    desc: "This is a game-changer for apartments! Compact, elegant, and extremely efficient. Couldn’t be happier with the purchase.",
+    name: `Box`,
+    desc: `uae`,
+    desig: `I really want to thanks Ztart visa uae, and specifically Ms Sahala and Ms Riya for their big help to get UK VISA
+      to be honest at the beginning I was little not sure of that, becoz I just met them and contact them via WhatsApp, so I don’t trust too much.`,
   },
   {
-    name: "Chris Wilson",
-    desig: "Architect",
-    desc: "This lift is an incredible addition! Stylish, compact, and highly efficient. My clients love it too. Great job!",
+    name: `SHIYON JOSHY`,
+    desc: `uae`,
+    desig: `ZtartVisa is the best visa agency in Dubai! Their team of visa consultants in Dubai made my visa application process smooth and easy. They guided me through every step, ensuring that all the paperwork was in order.`,
   },
   {
-    name: "Michael Brown",
-    desig: "Engineer",
-    desc: "Amazing product and excellent support! The lift blends seamlessly into my house design. Highly recommend this to everyone looking for convenience and style.",
+    name: `Saina Byju`,
+    desc: `uae`,
+    desig: `I had an excellent experience with ZtartVisa. Their visa consultants in Dubai are highly knowledgeable and responsive. They took care of everything, from document submission to follow-ups. If you're looking for visa services in Dubai, ZtartVisa is the way to go!`,
   },
   {
-    name: "Emily Davis",
-    desig: "Designer",
-    desc: "This is a game-changer for apartments! Compact, elegant, and extremely efficient. Couldn’t be happier with the purchase.",
+    name: `Jorline Joshy`,
+    desc: `uae`,
+    desig: `ZtartVisa made my visa process incredibly easy. Their visa services in Dubai are efficient, and the consultants provided personalized guidance. I appreciated their attention to detail and prompt service. Definitely the best visa agency in Dubai!`,
   },
   {
-    name: "Chris Wilson",
-    desig: "Architect",
-    desc: "This lift is an incredible addition! Stylish, compact, and highly efficient. My clients love it too. Great job!",
+    name: `Rahul RS`,
+    desc: `uae`,
+    desig: `I’m so glad I chose ZtartVisa for my visa application. Their team of visa consultants in Dubai is very professional and friendly. They kept me informed at every step and made the whole process stress-free. I would highly recommend ZtartVisa for anyone in need of a visa agency in Dubai.`,
   },
 ];
 
@@ -94,9 +95,10 @@ const Testimonails = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
         },
       },
+      
       {
         breakpoint: 640,
         settings: {
@@ -111,13 +113,13 @@ const Testimonails = () => {
       <Slider {...settings}>
         {CustomerTestimonails.map((testi, i) => (
           <div key={i} className="p-1 md:p-2 mt-5 z-10">
-            <div className="bg-gray-100 hover:bg-gray-100 duration-200 border border-gray-100 text-gray-600 h-full  md:h-80 p-5 rounded-lg flex flex-col text-center gap-1  justify-center relative">
+            <div className="bg-gray-100 hover:bg-gray-100 duration-200 border border-gray-100 text-gray-600 h-full  md:h-80 xl:min-h-96 p-5 rounded-lg flex flex-col text-center gap-1  justify-center relative">
               <RiDoubleQuotesL className="text-6xl text-visaclr" />
 
-              <p className="text-[10px] md:text-sm text-gray-500">{testi.desc}</p>
+              <p className="text-[10px] md:text-sm text-gray-500">{testi.desig}</p>
 
               <h4 className="text-base font-semibold my-2">{testi.name}</h4>
-              <p className="text-xs font-light">{testi.desig}</p>
+              <p className="text-xs font-light">{testi.desc}</p>
             </div>
           </div>
         ))}

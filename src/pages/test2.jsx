@@ -30,12 +30,13 @@ import { FcGoogle } from "react-icons/fc";
 import { FiPlus } from "react-icons/fi";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
-
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 
 const test2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [phone, setPhone] = useState("");
 
 
   const images = [bann4, bann5];
@@ -60,28 +61,56 @@ const test2 = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Your EmailJS service ID, template ID, and Public Key
+    const serviceId = "service_0jqfk9j";
+    const templateId = "template_a16kk5l";
+    const publicKey = "aR9TICluCGlXT7D0d";
+
+    // Create a new object that contains dynamic template params
+    const templateParams = {
+      user_mobile: phone,
+    };
+
+    // Send the email using EmailJS
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        toast.success("Message sent successfully", response);
+        setPhone("");
+      })
+      .catch((error) => {
+        toast.error("Error sending email", error);
+      });
+  };
+
   return (
     <>
       <NewHeader/>
 
       <section className=" w-11/12 mx-auto mt-16 md:mt-5 rounded-xl overflow-hidden bg-white h-full xl:h-screen flex flex-col-reverse md:flex-row gap-5">
         <div className="basis-1/2 md:basis-3/5 px-2 md:py-20 xl:pl-32 xl:pr-20 md:col-span-3 flex flex-col gap-5 items-center text-center justify-center h-full w-full bg-white">
-          <h1 className="text-3xl xl:text-6xl font-PoppinsSemibold capitalize">
-            Quick and Timely
-            <br /> visa Approvals
+          <h1 className="text-5xl xl:text-7xl font-PoppinsMedium uppercase !leading-none">
+          <span className="font-PoppinsLight">Visa on time,</span> guaranteed
           </h1>
-          <p className="text-sm md:text-sm leading-loose">
-            Your journey can be easier and more convenient with the best visa
+          <p className="text-xs md:text-sm leading-loose">
+            Your journey can be easier and more convenient with the best Visa
             services in Dubai. We provide fast, hassle-free processing to help
-            you get the right visa quickly. Let us take care of everything, so
+            you get the right Visa quickly. Let us take care of everything, so
             you can focus on what matters.
           </p>
-          <form className="relative text-black overflow-hidden border border-visaclr rounded-full w-full md:w-[80%] 2xl:w-[70%]  xl:mt-5">
+          <form onSubmit={handleSubmit} className="relative text-black overflow-hidden border border-visaclr rounded-full w-full md:w-[80%] 2xl:w-[70%]  xl:mt-5">
             <input
               className="w-full p-3 xl:p-4 outline-none pr-20 xl:pr-52"
               type="number"
               placeholder="Mobile number"
               inputMode="numeric"
+              name="user_mobile"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
               min="0"
             />
             <button
@@ -92,18 +121,18 @@ const test2 = () => {
             </button>
           </form>
 
-          <div className="flex items-center gap-16 -mb-20 mt-5">
+          <div className="flex items-center gap-10 xl:gap-16 xl:-mb-20 mt-5 capitalize">
             <div className="flex flex-col items-center">
-              <h4 className="text-3xl font-mono font-semibold">100k</h4>
-              <p className="text-[12px]">Lorem, ipsum.</p>
+              <h4 className="text-xl xl:text-3xl font-mono font-semibold">120+</h4>
+              <p className="text-[10px] md:text-[12px]">countries </p>
             </div>
             <div className="flex flex-col items-center">
-              <h4 className="text-3xl font-mono font-semibold">100%</h4>
-              <p className="text-[12px]">Lorem, ipsum.</p>
+              <h4 className="text-xl xl:text-3xl font-mono font-semibold">10,000+</h4>
+              <p className="text-[10px] md:text-[12px]">happy clients</p>
             </div>
             <div className="flex flex-col items-center">
-              <h4 className="text-3xl font-mono font-semibold">100+</h4>
-              <p className="text-[12px]">Lorem, ipsum.</p>
+              <h4 className="text-xl xl:text-3xl font-mono font-semibold">5+</h4>
+              <p className="text-[10px] md:text-[12px]">year of experience</p>
             </div>
           </div>
         </div>
@@ -126,7 +155,7 @@ const test2 = () => {
 
           {/* Image */}
           <img
-            className="relative md:absolute h-[500px] md:h-full top-0 left-0 w-full object-cover transition-opacity duration-1000"
+            className="relative xl:absolute h-[500px] md:h-full top-0 left-0 w-full object-cover transition-opacity duration-1000"
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
             loading="lazy"
@@ -150,25 +179,31 @@ const test2 = () => {
         />
         <div className="bg-[#0000008b] absolute w-full h-full"></div>
         <div className="relative text-white flex flex-col gap-5 items-center justify-center text-center py-12 xl:py-32 w-[80%] mx-auto">
-          <h4 className="text-2xl md:text-5xl font-PoppinsMedium uppercase">
+          <h4 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">
            Simplifying Your Visa Journey
           </h4>
-          <p className="text-xs xl:text-base">
-              Tired of waiting and dealing with confusing visa steps? At Ztartvisa, we provide the best visa services in Dubai, making the process fast and simple. Our expert team helps you with every step to get your tourist or visit visa approved quickly and easily. Apply now for a stress-free experience.
+          <p className="hidden md:block text-xs xl:text-base">
+              Tired of waiting and dealing with confusing Visa steps? At Ztartvisa, we provide the best Visa services in Dubai, making the process fast and simple. Our expert team helps you with every step to get your Tourist or Visit Visa approved quickly and easily. Apply now for a stress-free experience.
           </p>
+          <p className="md:hidden text-xs xl:text-base">
+              Tired of waiting and dealing with confusing Visa steps? At Ztartvisa, we provide...
+          </p>
+      
+          <Link to={'/contact'}>
           <button className="bg-white text-black px-5 shadow-xl py-3 text-sm font-PoppinsMedium rounded-full">
           Contact Now
           </button>
+          </Link>
         </div>
       </section>
 
       <section className="w-11/12 xl:w-10/12 mx-auto py-10 xl:py-20">
         <div className=" relative  text-center">
-          <h4 className="text-2xl md:text-5xl font-PoppinsMedium uppercase">
+          <h4 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">
             What Our <span className="text-visaclr">Client's Say</span>
           </h4>
           <div className="flex flex-col items-center gap-1 mt-5">
-            <p className="text-center text-sm lg:text-base">
+            <p className="text-center text-xs md:text-sm lg:text-base">
               Trusted by thousands with a perfect 5-star Google rating. Your
               journey is our priority!
             </p>
@@ -199,17 +234,19 @@ const test2 = () => {
         />
         <div className="bg-[#00000066] absolute w-full h-full"></div>
         <div className="relative text-white flex flex-col gap-5 items-start justify-end pt-52 pb-5 md:pt-52 p-5 md:p-10 xl:pb-20 xl:w-[60%]">
-          <h4 className="text-2xl md:text-5xl font-PoppinsMedium uppercase">
+          <h4 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">
             Get in touch with our expert consultants
           </h4>
-          <p className="text-sm md:text-base">
-            We have customized our Visa services in dubai to support your travel
-            plans. Reach out to us for a smooth and efficient tourist or visit
-            visa process.
+          <p className="text-xs md:text-base">
+            We have customized our Visa services in Dubai to support your travel
+            plans. Reach out to us for a smooth and efficient Tourist or Visit
+            Visa process.
           </p>
+          <Link to={'/contact'}>
           <button className="bg-white text-black px-5 shadow-xl py-3 text-sm font-PoppinsMedium rounded-full">
             GET YOUR VISA NOW, FAST & EASY!
           </button>
+          </Link>
         </div>
       </section>
       <section className="-mb-10">
