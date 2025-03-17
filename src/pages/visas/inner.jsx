@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { allvisaData } from "../../components/Constant";
 import { HiOutlineDevicePhoneMobile, HiOutlineUsers } from "react-icons/hi2";
+import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { AiOutlineFieldTime, AiOutlineUser } from "react-icons/ai";
 import { IoDocumentTextOutline, IoLocationOutline } from "react-icons/io5";
@@ -14,6 +15,19 @@ import { RiFileWarningLine } from "react-icons/ri";
 import { Loader } from "../../components";
 import RichTextContent from "../../components/RichTextEditor/RichTextContent";
 
+
+const countries = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
+  "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+  "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic (Czechia)", "Democratic Republic of the Congo",
+  "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini (Swaziland)", "Ethiopia",
+  "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
+  "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan",
+  "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (Burma)", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+  "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+  "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu",
+  "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+];
 const notify = () =>
   toast.dark("Application started ✅", {
     position: "bottom-right",
@@ -61,6 +75,9 @@ const VisaInner = () => {
   const [visadata, setVisaData] = useState({});
   const [isVisaOpen, setVisaOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState("");
   // const { title } = useParams();
   // const decodedTitle = decodeURIComponent(title);
   const visatogglePopup = () => {
@@ -123,102 +140,37 @@ const VisaInner = () => {
 
   // api
 
-  const [formData, setFormData] = useState({
-    customerName: "",
-    mobileNo: "",
-    countryId: "",
-  });
 
-  // Update form state based on input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    const mobileNumberWithZero = "0" + formData.mobileNo;
-    try {
-      const response = await fetch(
-        "https://lead.accorelab.com/api/Lead/Create/LeadAutoCustomer",
-        {
-          method: "POST",
-          headers: {
-            Accept: "*/*",
-            "Content-Type": "application/json",
-            ClientKey: "AcrelbKey", // Replace 'xxxxxxx' with your actual ClientKey
-            ClientValue: "Xjr@5j%787gfounS10", // Replace 'xxxxxxx' with your actual ClientValue
-          },
-          body: JSON.stringify({
-            customerName: formData.customerName,
-            mobileNo: mobileNumberWithZero,
-            countryId: formData.countryId, // Assuming countryId is always 4 as per your example
-          }),
-        }
-      );
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-      if (!response.ok) {
-        toast.error("Please fill out all fields to proceed");
-        throw new Error("Something went wrong");
-      }
+    // Your EmailJS service ID, template ID, and Public Key
+    const serviceId = "service_rvuqpgc";
+    const templateId = "template_w6dc66m";
+    const publicKey = "PR2g2ETNbDb0653Ge";
 
-      const data = await response.json(); // Assuming the server responds with JSON
-      toast.dark("Submission Successful");
-      setFormData({
-        customerName: "",
-        mobileNo: "",
-        countryId: "",
-      });
-      setVisaOpen(false);
-      console.log("Submission Successful", data);
-      // Here you could clear the form or give feedback to the user
-    } catch (error) {
-      console.error("Submission failed", error);
-    }
-  };
-  console.log("sadfdsfdf");
-
-  const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch(
-          "https://lead.accorelab.com/api/Country/List",
-          {
-            method: "GET",
-            headers: {
-              ClientKey: "AcrelbKey",
-              ClientValue: "Xjr@5j%787gfounS10",
-            },
-          }
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (data.status === 200 && data.result) {
-          setCountries(data.result);
-        } else {
-          setError(data.errorMessage || "Failed to fetch countries");
-        }
-      } catch (error) {
-        console.log(error);
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
+    // Create a new object that contains dynamic template params
+    const templateParams = {
+      user_name: name,
+      user_mobile: phone,
+      user_cnty: country,
     };
 
-    fetchCountries();
-  }, []);
+    // Send the email using EmailJS
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        toast.success("Message sent successfully", response);
+        setName("");
+        setPhone("");
+        setCountry("");
+      })
+      .catch((error) => {
+        toast.error("Error sending email", error);
+      });
+  };
+
 
   return (
     <>
@@ -316,70 +268,27 @@ const VisaInner = () => {
                   {/* Ribbon */}
 
                   {/* Ribbon */}
-                  <form
-                    onSubmit={handleSubmit}
-                    className="flex flex-col space-y-5 "
-                  >
-                    {/* <h1>Apply now</h1> */}
-                    <div className="space-y-2">
-                      <div className="relative w-full">
-                        <input
-                          className="outline-none h-10 w-full rounded-xl p-2 pl-8 border"
-                          type="text"
-                          placeholder="Name"
-                          name="customerName"
-                          value={formData.customerName}
-                          onChange={handleChange} // Bind change handler
-                          required
-                        />
-                        <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
-                      </div>
-                      <div className="relative w-full">
-                        <input
-                          className="outline-none h-10 w-full rounded-xl p-2 pl-20 border [&::-webkit-inner-spin-button]:appearance-none"
-                          type="tel"
-                          inputMode="numeric"
-                          placeholder="58 550 3940"
-                          pattern="[0-9]{9}"
-                          title="Please enter a 9-digit number"
-                          name="mobileNo"
-                          value={formData.mobileNo}
-                          onChange={handleChange} // Bind change handler
-                          required
-                        />
-                        <p className="absolute top-1.5 left-8 chfont font-medium">
-                          +971
-                        </p>
-                        <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
-                      </div>
-                      <div className="relative w-full">
-                        <select
-                          className="w-full md:py-2  pl-8 text-base focus:outline-none appearance-none border rounded-xl"
-                          name="countryId"
-                          value={formData.countryId}
-                          onChange={handleChange} // Bind change handler
-                          required
-                        >
-                          <option value="">Select a location</option>
-                          {countries.map((country) => (
-                            <option
-                              key={country.countryId}
-                              value={country.countryId}
-                            >
-                              {country.countryName}
-                            </option>
-                          ))}
-                        </select>
-                        <IoLocationOutline className="absolute top-3 left-2 text-lg text-gray-700" />
-                      </div>
-                    </div>
-                    <button
-                      type="submit"
-                      className=" text-base bg-[#ffb800] hover:bg-[#f7c545] duration-150 capitalize font-PoppinsMedium rounded-xl shadow-md w-full h-10"
-                    >
-                      Start application
-                    </button>
-                  </form>
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
+      <div className="relative">
+        <input className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none" type="text" placeholder="Name" name="user_name" value={name} onChange={(e) => setName(e.target.value)} required />
+        <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
+      </div>
+      <div className="relative">
+        <input className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none" type="tel" inputMode="numeric" placeholder="58 550 3940" pattern="[0-9]{9}" title="Please enter a 9-digit number" name="user_mobile" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+        <p className="absolute top-[7px] left-8 chfont font-medium">+971</p>
+        <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
+      </div>
+      <div className="relative">
+        <select className="h-10 w-full pl-8 text-base outline-none border appearance-none" name="user_cnty" value={country} onChange={(e) => setCountry(e.target.value)} required>
+          <option value="">Select a location</option>
+          {countries.map((c, index) => (
+            <option key={index} value={c}>{c}</option>
+          ))}
+        </select>
+        <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
+      </div>
+      <button className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2" type="submit">Submit</button>
+    </form>
                 </div>
               </div>
             </div>
@@ -421,60 +330,26 @@ const VisaInner = () => {
                 get free visa consultation
               </h1>
               <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
-                <div className="relative">
-                  <input
-                    className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none"
-                    type="text"
-                    placeholder="Name"
-                    name="customerName"
-                    value={formData.customerName}
-                    onChange={handleChange} // Bind change handler
-                    required
-                  />
-                  <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
-                </div>
-                <div className="relative">
-                  <input
-                    className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none"
-                    type="tel"
-                    inputMode="numeric"
-                    placeholder="58 550 3940"
-                    pattern="[0-9]{9}"
-                    title="Please enter a 9-digit number"
-                    name="mobileNo"
-                    value={formData.mobileNo}
-                    onChange={handleChange} // Bind change handler
-                    required
-                  />
-                  <p className="absolute top-[7px] left-8 chfont font-medium">
-                    +971
-                  </p>
-                  <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
-                </div>
-                <div className="relative">
-                  <select
-                    className="h-10 w-full pl-8 text-base outline-none border appearance-none"
-                    name="countryId"
-                    value={formData.countryId}
-                    onChange={handleChange} // Bind change handler
-                    required
-                  >
-                    <option value="">Select a location</option>
-                    {countries.map((country) => (
-                      <option key={country.countryId} value={country.countryId}>
-                        {country.countryName}
-                      </option>
-                    ))}
-                  </select>
-                  <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
-                </div>
-                <button
-                  className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2"
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
+      <div className="relative">
+        <input className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none" type="text" placeholder="Name" name="user_name" value={name} onChange={(e) => setName(e.target.value)} required />
+        <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
+      </div>
+      <div className="relative">
+        <input className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none" type="tel" inputMode="numeric" placeholder="58 550 3940" pattern="[0-9]{9}" title="Please enter a 9-digit number" name="user_mobile" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+        <p className="absolute top-[7px] left-8 chfont font-medium">+971</p>
+        <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
+      </div>
+      <div className="relative">
+        <select className="h-10 w-full pl-8 text-base outline-none border appearance-none" name="user_cnty" value={country} onChange={(e) => setCountry(e.target.value)} required>
+          <option value="">Select a location</option>
+          {countries.map((c, index) => (
+            <option key={index} value={c}>{c}</option>
+          ))}
+        </select>
+        <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
+      </div>
+      <button className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2" type="submit">Submit</button>
+    </form>
             </div>
           </div>
         </div>

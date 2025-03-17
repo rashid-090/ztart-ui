@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { bann3, tick } from '../../assets';
+import { ban6, bann3, tick } from '../../assets';
 
 const FastReliable = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -29,8 +29,8 @@ const FastReliable = () => {
 
   return (
     <section className="w-full mx-auto relative overflow-hidden">
-      <img className="absolute h-full w-full left-0 top-0 object-cover" src={bann3} alt="" />
-      <div className="bg-[#000000a4] absolute w-full h-full"></div>
+      <img className="absolute h-full w-full left-0 top-0 object-cover object-top" src={ban6} alt="" />
+      <div className="bg-[#00000092] absolute w-full h-full"></div>
       <div className="z-10 relative grid grid-cols-1 gap-y-10 gap-5 py-10 xl:py-20 w-11/12 xl:w-10/12 mx-auto">
         <div className="flex flex-col justify-center items-start xl:items-center xl:text-center gap-2 text-white">
           <h4 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">

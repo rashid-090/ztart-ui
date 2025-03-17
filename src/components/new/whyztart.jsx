@@ -1,46 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import { bann3, bann2, bann4 } from '../../assets';
+import { cg1,cg2,cg3,cg4,cg5,cg6,bann3, bann2, bann4 } from '../../assets';
 import { Link } from 'react-router-dom';
 
 const data = [
   {
     icon:`🏢`,
-    image: bann3,
+    image: cg1,
     title: 'Your Trusted Visa Service in Dubai',
     description:
       'Count on us for specialized Visa support from start to finish. Our experienced Visa consultants in Dubai ensure your process is smooth, whether you’re applying for a Tourist Visa, Visit Visa, or Business Visa.',
   },
   {
     icon:`🎯`,
-    image: bann2,
+    image: cg2,
     title: 'Tailored Visa Solutions',
     description:
       'Need a Schengen Visa or a Business Visa? We’ve got you covered with customized services that meet all requirements for on-time approvals. Get Visa Solutions that are built around your specific needs.',
   },
   {
     icon:`⚡`,
-    image: bann4,
+    image: cg3,
     title: 'Efficient Visa Processing',
     description:
       'Skip the wait and experience fast, efficient visa services. From Schengen Visa Assistance to Tourist Visa, our streamlined process delivers quick turnarounds, ensuring you’re travel-ready in no time.',
   },
   {
     icon:`💰`,
-    image: bann2,
+    image: cg4,
     title: 'Save Your Money',
     description:
       'Our expert advice helps you avoid unnecessary expenses—maximize your budget and get exactly what you need.',
   },
   {
     icon:`🕰️`,
-    image: bann3,
+    image: cg5,
     title: 'Reliable Visa Consultancy in Dubai',
     description:
       'Our dedicated team offers top-notch Visa Consultancy in Dubai, providing 24/7 customer support. We’re here to assist you through every step of the process.',
   },
   {
     icon:`🤝`,
-    image: bann3,
+    image: cg6,
     title: 'Strong Government Connections',
     description:
       'With our deep understanding of global Visa regulations and strong ties with government bodies, we can ensure a faster, smoother Visa approval experience.',

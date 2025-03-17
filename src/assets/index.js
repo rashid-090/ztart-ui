@@ -117,6 +117,17 @@ import blog8pic from './images/blog/blog8.webp'
 import blog9pic from './images/blog/blog9.webp'
 import blog10pic from './images/blog/blog10.webp'
 
+import ban5 from './images/new/bgg1.webp'
+import ban6 from './images/new/bgg2.webp'
+
+import cg1 from './images/new/cg1.webp'
+import cg2 from './images/new/cg2.webp'
+import cg3 from './images/new/cg3.webp'
+import cg4 from './images/new/cg4.webp'
+import cg5 from './images/new/cg5.webp'
+import cg6 from './images/new/cg6.webp'
+
+
 
 import stand1 from './images/new/Free visa consultation.svg'
 import stand2 from './images/new/Application preparation.svg'
@@ -135,6 +146,7 @@ import aeorplane1 from './images/new/airplane1.svg'
 import aeorplane2 from './images/new/areo3.svg'
 
 export{
+    ban5,ban6,cg1,cg2,cg3,cg4,cg5,cg6,
     stand1,stand2,stand3,stand4,bann1,bann2,bann3,aarow,baan22,bann4,bann5,aeorplane1,aeorplane2,tick,
     blog1pic,blog2pic,blog3pic,blog4pic,blog5pic,blog6pic,blog7pic,blog8pic,blog9pic,blog10pic,
     turkeyVisa,japanVisa,usaVisa,

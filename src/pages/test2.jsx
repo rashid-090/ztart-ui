@@ -10,7 +10,8 @@ import {
   stand3,
   stand4,
   bann4,
-  bann5
+  bann5,
+  ban5
 } from "../assets";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
@@ -65,9 +66,9 @@ const test2 = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-    const serviceId = "service_0jqfk9j";
-    const templateId = "template_a16kk5l";
-    const publicKey = "aR9TICluCGlXT7D0d";
+    const serviceId = "service_rvuqpgc";
+    const templateId = "template_bp2ycsp";
+    const publicKey = "PR2g2ETNbDb0653Ge";
 
     // Create a new object that contains dynamic template params
     const templateParams = {
@@ -173,11 +174,11 @@ const test2 = () => {
 
       <section className="w-11/12 xl:w-10/12 mx-auto relative rounded-3xl overflow-hidden">
         <img
-          className="absolute w-full h-full object-cover"
-          src={bann1}
+          className="absolute w-full h-full object-cover object-center"
+          src={ban5}
           alt=""
         />
-        <div className="bg-[#0000008b] absolute w-full h-full"></div>
+        <div className="bg-[#0000004a] absolute w-full h-full"></div>
         <div className="relative text-white flex flex-col gap-5 items-center justify-center text-center py-12 xl:py-32 w-[80%] mx-auto">
           <h4 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">
            Simplifying Your Visa Journey
@@ -258,3 +259,6 @@ const test2 = () => {
 };
 
 export default test2;
+
+
+

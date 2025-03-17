@@ -21,9 +21,9 @@ const Contact = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-    const serviceId = "service_0jqfk9j";
-    const templateId = "template_a16kk5l";
-    const publicKey = "aR9TICluCGlXT7D0d";
+    const serviceId = "service_rvuqpgc";
+    const templateId = "template_bp2ycsp";
+    const publicKey = "PR2g2ETNbDb0653Ge";
 
     // Create a new object that contains dynamic template params
     const templateParams = {
