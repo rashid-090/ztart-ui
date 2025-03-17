@@ -73,9 +73,10 @@ const NewHeader = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          <Link className="bg-gray-200 md:bg-white text-[10px] sm:text-xs md:text-sm shadow-xl font-PoppinsMedium uppercase text-black px-5 xl:px-8 py-2.5 xl:py-3 rounded-full">
+          <a href="tel:045282118"
+            target="_blank" className="bg-gray-200 md:bg-white text-[10px] sm:text-xs md:text-sm shadow-xl font-PoppinsMedium uppercase text-black px-5 xl:px-8 py-2.5 xl:py-3 rounded-full">
             request a call
-          </Link>
+          </a>
           <CgMenuLeft
             className="text-3xl xl:hidden"
             onClick={togglePopup}

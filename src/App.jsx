@@ -87,8 +87,8 @@ function App() {
             <Route element={<UserLayout />}>
               <Route path="/login" element={<LoginPage  setAdmin={setAdmin}/>} />
               <Route path="/" element={<Homepage />} />
-              <Route path="/test" element={<Hometest />} />
-              <Route path="/test2" element={<Hometest2 />} />
+              {/* <Route path="/test" element={<Hometest />} />
+              <Route path="/test2" element={<Hometest2 />} /> */}
               <Route path="/visa" element={<VisaGrid />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/faq" element={<Faq />} />
