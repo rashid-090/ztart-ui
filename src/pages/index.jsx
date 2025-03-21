@@ -11,7 +11,7 @@ import {
   stand4,
   bann4,
   bann5,
-  ban5
+  ban5,
 } from "../assets";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
@@ -24,7 +24,7 @@ import {
   Testimonial2,
   Whyztarts,
   Footer,
-  NewHeader
+  NewHeader,
 } from "../components";
 import { IoMdStar } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
@@ -33,12 +33,11 @@ import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaThreads } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-
+import { Helmet } from "react-helmet";
 
 const test2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [phone, setPhone] = useState("");
-
 
   const images = [bann4, bann5];
 
@@ -89,12 +88,32 @@ const test2 = () => {
 
   return (
     <>
-      <NewHeader/>
+      <Helmet>
+        <title>Best Visa service in Dubai | Visa Agency in Dubai, UAE</title>
+        <link rel="canonical" href={`https://ztartvisa.com`} />
+        <meta
+          name="keywords"
+          content="Visa Service in Dubai, Best Visa service in Dubai, Visa Services in Dubai, Best Visa Services in Dubai, Best Visa Service in UAE, Visa Agency in Dubai, Best Visa agency in Dubai, Visa Agents in Dubai, Best Visa Agents in Dubai, Visa Consultant in Dubai, Best Visa Consultant in Dubai, Visa Consultants in Dubai, Best Visa Consultants in Dubai, Visa Consultancy in Dubai, Best Visa Consultancy in Dubai, Schengen Visa Consultant in Dubai, Schengen Visa Consultants in Dubai, Schengen Visa Consultancy in Dubai, Best Schengen Visa Consultant in Dubai, Best Schengen Visa Consultants in Dubai, Best Schengen Visa Consultancy in Dubai, Tourist visa from from, Visit visa from Dubai"
+        />
+        <meta
+          name="description"
+          content="Simplify your travel dreams with Ztartvisa. Best Visa services in Dubai, UAE offering expert guidance & efficient processing for all visa types."
+        />
+        <meta
+          property="og:title"
+          content="Best Visa service in Dubai | Visa Agency in Dubai, UAE"
+        />
+        <meta
+          property="og:description"
+          content="Simplify your travel dreams with Ztartvisa. Best Visa services in Dubai, UAE offering expert guidance & efficient processing for all visa types."
+        />
+      </Helmet>
+      <NewHeader />
 
       <section className=" w-11/12 mx-auto mt-16 md:mt-5 rounded-xl overflow-hidden bg-white h-full xl:h-screen flex flex-col-reverse md:flex-row gap-5">
         <div className="basis-1/2 md:basis-3/5 px-2 md:py-20 xl:pl-32 xl:pr-20 md:col-span-3 flex flex-col gap-5 items-center text-center justify-center h-full w-full bg-white">
           <h1 className="text-5xl xl:text-7xl font-PoppinsMedium uppercase !leading-none">
-          <span className="font-PoppinsLight">Visa on time,</span> guaranteed
+            <span className="font-PoppinsLight">Visa on time,</span> guaranteed
           </h1>
           <p className="text-xs md:text-sm leading-loose">
             Your journey can be easier and more convenient with the best Visa
@@ -102,7 +121,10 @@ const test2 = () => {
             you get the right Visa quickly. Let us take care of everything, so
             you can focus on what matters.
           </p>
-          <form onSubmit={handleSubmit} className="relative text-black overflow-hidden border border-visaclr rounded-full w-full md:w-[80%] 2xl:w-[70%]  xl:mt-5">
+          <form
+            onSubmit={handleSubmit}
+            className="relative text-black overflow-hidden border border-visaclr rounded-full w-full md:w-[80%] 2xl:w-[70%]  xl:mt-5"
+          >
             <input
               className="w-full p-3 xl:p-4 outline-none pr-20 xl:pr-52"
               type="number"
@@ -124,15 +146,21 @@ const test2 = () => {
 
           <div className="flex items-center gap-10 xl:gap-16 xl:-mb-20 mt-5 capitalize">
             <div className="flex flex-col items-center">
-              <h4 className="text-xl xl:text-3xl font-mono font-semibold">120+</h4>
+              <h4 className="text-xl xl:text-3xl font-mono font-semibold">
+                120+
+              </h4>
               <p className="text-[10px] md:text-[12px]">countries </p>
             </div>
             <div className="flex flex-col items-center">
-              <h4 className="text-xl xl:text-3xl font-mono font-semibold">10,000+</h4>
+              <h4 className="text-xl xl:text-3xl font-mono font-semibold">
+                10,000+
+              </h4>
               <p className="text-[10px] md:text-[12px]">happy clients</p>
             </div>
             <div className="flex flex-col items-center">
-              <h4 className="text-xl xl:text-3xl font-mono font-semibold">5+</h4>
+              <h4 className="text-xl xl:text-3xl font-mono font-semibold">
+                5+
+              </h4>
               <p className="text-[10px] md:text-[12px]">year of experience</p>
             </div>
           </div>
@@ -181,19 +209,24 @@ const test2 = () => {
         <div className="bg-[#0000004a] absolute w-full h-full"></div>
         <div className="relative text-white flex flex-col gap-5 items-center justify-center text-center py-12 xl:py-32 w-[80%] mx-auto">
           <h4 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase">
-           Simplifying Your Visa Journey
+            Simplifying Your Visa Journey
           </h4>
           <p className="hidden md:block text-xs xl:text-base">
-              Tired of waiting and dealing with confusing Visa steps? At Ztartvisa, we provide the best Visa services in Dubai, making the process fast and simple. Our expert team helps you with every step to get your Tourist or Visit Visa approved quickly and easily. Apply now for a stress-free experience.
+            Tired of waiting and dealing with confusing Visa steps? At
+            Ztartvisa, we provide the best Visa services in Dubai, making the
+            process fast and simple. Our expert team helps you with every step
+            to get your Tourist or Visit Visa approved quickly and easily. Apply
+            now for a stress-free experience.
           </p>
           <p className="md:hidden text-xs xl:text-base">
-              Tired of waiting and dealing with confusing Visa steps? At Ztartvisa, we provide...
+            Tired of waiting and dealing with confusing Visa steps? At
+            Ztartvisa, we provide...
           </p>
-      
-          <Link to={'/contact'}>
-          <button className="bg-white text-black px-5 shadow-xl py-3 text-sm font-PoppinsMedium rounded-full">
-          Contact Now
-          </button>
+
+          <Link to={"/contact"}>
+            <button className="bg-white text-black px-5 shadow-xl py-3 text-sm font-PoppinsMedium rounded-full">
+              Contact Now
+            </button>
           </Link>
         </div>
       </section>
@@ -243,17 +276,16 @@ const test2 = () => {
             plans. Reach out to us for a smooth and efficient Tourist or Visit
             Visa process.
           </p>
-          <Link to={'/contact'}>
-          <button className="bg-white text-black px-5 shadow-xl py-3 text-sm font-PoppinsMedium rounded-full">
-            GET YOUR VISA NOW, FAST & EASY!
-          </button>
+          <Link to={"/contact"}>
+            <button className="bg-white text-black px-5 shadow-xl py-3 text-sm font-PoppinsMedium rounded-full">
+              GET YOUR VISA NOW, FAST & EASY!
+            </button>
           </Link>
         </div>
       </section>
       <section className="-mb-10">
-        <Footer/>
+        <Footer />
       </section>
-      
     </>
   );
 };
