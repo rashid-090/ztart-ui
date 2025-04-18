@@ -39,6 +39,8 @@ const test2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [phone, setPhone] = useState("");
 
+
+  
   const images = [bann4, bann5];
 
   // Automatically change the image every 3 seconds
