@@ -19,6 +19,7 @@ const CreateVisasForm = () => {
   const [slug, setSlug] = useState("");
   const [metaTitle, setMetaTitle] = useState("");
   const [metaDescription, setMetaDescription] = useState("");
+  const [metaKeywords, setMetaKeywords] = useState("");
   const [description, setDescription] = useState("");
   const [imageAlt, setImageAlt] = useState("");
   const [image, setImage] = useState(null); // image file
@@ -128,6 +129,7 @@ const CreateVisasForm = () => {
     formData.append("slug", slug);
     formData.append("description", description);
     formData.append("metaTitle", metaDescription);
+    formData.append("metaKeywords", metaKeywords);
     formData.append("metaDescription", metaDescription);
     formData.append("imageAlt", imageAlt);
     formData.append("about", about);
@@ -151,8 +153,9 @@ const CreateVisasForm = () => {
         }
       );
 
+
       if (response.status === 200) {
-        navigate("/manage-visas");
+        // navigate("/manage-visas");
         // Handle success, like redirecting or showing a success message
         console.log("Visa created successfully", response.data);
         toast.success("Visa created successfully");
@@ -164,7 +167,7 @@ const CreateVisasForm = () => {
       }
     } catch (error) {
       console.error("API call failed", error);
-      toast.error("Error creating visa, slug is unique");
+      toast.error("Error creating visa !!!");
       setIsLoading(false);
     }
   };
@@ -233,6 +236,7 @@ const CreateVisasForm = () => {
             required
           />
         </div>
+        
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -303,6 +307,19 @@ const CreateVisasForm = () => {
           )}
         </div>
       </div>
+      <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Meta Keywords
+          </label>
+          <textarea
+            rows="3"
+            placeholder="Meta Keywords..."
+            value={metaKeywords}
+            onChange={(e) => setMetaKeywords(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-visaclr focus:border-visaclr"
+            required
+          />
+        </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Image alt

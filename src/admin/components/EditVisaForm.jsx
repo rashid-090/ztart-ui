@@ -6,6 +6,7 @@ import axios from "axios";
 import { vars } from "../../constents/Api";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { Loader } from "../../components";
 
 const EditVisaForm = () => {
   const { id } = useParams(); // Get the ID from the URL parameters
@@ -13,6 +14,7 @@ const EditVisaForm = () => {
   const [country, setCountry] = useState("");
   const [metaTitle, setMetaTitle] = useState("");
   const [metaDescription, setMetaDescription] = useState("");
+  const [metaKeywords, setMetaKeywords] = useState("");
   const [image, setImage] = useState("");
   const [imageAlt, setImageAlt] = useState("");
   const [imageFile, setImageFile] = useState(null); // Store the selected image file
@@ -20,6 +22,9 @@ const EditVisaForm = () => {
   const [about, setAbout] = useState("");
   const [questions, setQuestions] = useState([]);
   const [faqs, setFaqs] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const modules = {
@@ -67,17 +72,18 @@ const EditVisaForm = () => {
   // Fetch visa details from API
   useEffect(() => {
     const fetchVisaDetails = async () => {
+      setIsLoading(true); // Set loading state to true
       try {
         const response = await axios.get(
           `${vars.api_url}/api/1.0/admin/testimonial/testimonial/${id}`
         );
         const data = response?.data?.data;
-        console.log("From edit visa page", data);
 
         // Assuming the API returns the data in the expected format
         setTitle(data.title);
         setMetaTitle(data.metaTitle);
         setMetaDescription(data.metaDescription);
+        setMetaKeywords(data.metaKeywords);
         setCountry(data.country);
         setImage(data.imageURL);
         setImageAlt(data.imageAlt);
@@ -87,6 +93,8 @@ const EditVisaForm = () => {
         setFaqs(data.faqs || []);
       } catch (error) {
         console.error("Error fetching visa details:", error);
+      } finally {
+        setIsLoading(false); // Set loading state to false
       }
     };
 
@@ -127,6 +135,7 @@ const EditVisaForm = () => {
     const updatedData = {
       metaTitle,
       metaDescription,
+      metaKeywords,
       imageAlt,
       country,
       title,
@@ -156,7 +165,6 @@ const EditVisaForm = () => {
       if (response.ok) {
         navigate("/manage-visas");
 
-        console.log("Successfully updated visa details.");
         // Optionally, redirect or show a success message
       } else {
         console.error("Failed to update visa details:", await response.text());
@@ -165,6 +173,13 @@ const EditVisaForm = () => {
       console.error("Error updating visa details:", error);
     }
   };
+
+
+  if (isLoading) {
+    return (
+      <Loader />
+    );
+  }
 
   return (
     <div className="w-full mx-auto p-4 bg-white shadow-md rounded-lg space-y-4">
@@ -226,6 +241,21 @@ const EditVisaForm = () => {
           id="metaDescription"
           value={metaDescription}
           onChange={(e) => setMetaDescription(e.target.value)}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-opacity-50"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="metaKeywords"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Meta Keywords
+        </label>
+        <textarea
+          id="metaKeywords"
+          rows={3}
+          value={metaKeywords}
+          onChange={(e) => setMetaKeywords(e.target.value)}
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:outline-none focus:ring-opacity-50"
         />
       </div>

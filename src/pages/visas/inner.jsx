@@ -51,17 +51,15 @@ const FAQItem = ({ question, answer }) => {
           {question}
         </div>
         <div
-          className={`transform transition-transform ${
-            isOpen ? "rotate-45" : "rotate-0"
-          }`}
+          className={`transform transition-transform ${isOpen ? "rotate-45" : "rotate-0"
+            }`}
         >
           <FiPlus />
         </div>
       </div>
       <div
-        className={`bg-white  overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`bg-white  overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <p className="p-4 pl-0 text-sm font-PoppinsRegular">{answer}</p>
       </div>
@@ -176,11 +174,27 @@ const VisaInner = () => {
     <>
       <Helmet>
         <title>{visadata?.metaTitle}</title>
-        <meta name="description" content={visadata?.metaDescription || {}} />
+        <meta name="description" content={visadata?.metaDescription || ''} />
+        <meta name="keywords" content={visadata?.metaKeywords || ''} />
         <link
           rel="canonical"
           href={`https://ztartvisa.com/visa/${visadata?.slug}`}
         />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={visadata?.metaTitle} />
+        <meta property="og:description" content={visadata?.metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://ztartvisa.com/visa/${visadata?.slug}`} />
+        <meta property="og:image" content={visadata?.imageURL || 'https://ztartvisa.com/default-og.jpg'} />
+        <meta property="og:site_name" content="ZtartVisa" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={visadata?.metaTitle} />
+        <meta name="twitter:description" content={visadata?.metaDescription} />
+        <meta name="twitter:image" content={visadata?.imageURL || 'https://ztartvisa.com/default-twitter.jpg'} />
+        <meta name="twitter:site" content="@ztartvisa" />
       </Helmet>
 
       {isLoading ? (
@@ -249,12 +263,12 @@ const VisaInner = () => {
               <div>
                 {visadata?.faqs?.length > 0
                   ? visadata.faqs.map((faq, index) => (
-                      <FAQItem
-                        key={index}
-                        question={faq.question}
-                        answer={faq.answer}
-                      />
-                    ))
+                    <FAQItem
+                      key={index}
+                      question={faq.question}
+                      answer={faq.answer}
+                    />
+                  ))
                   : null}
               </div>
             </div>
@@ -269,26 +283,26 @@ const VisaInner = () => {
 
                   {/* Ribbon */}
                   <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
-      <div className="relative">
-        <input className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none" type="text" placeholder="Name" name="user_name" value={name} onChange={(e) => setName(e.target.value)} required />
-        <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
-      </div>
-      <div className="relative">
-        <input className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none" type="tel" inputMode="numeric" placeholder="58 550 3940" pattern="[0-9]{9}" title="Please enter a 9-digit number" name="user_mobile" value={phone} onChange={(e) => setPhone(e.target.value)} required />
-        <p className="absolute top-[7px] left-8 chfont font-medium">+971</p>
-        <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
-      </div>
-      <div className="relative">
-        <select className="h-10 w-full pl-8 text-base outline-none border appearance-none" name="user_cnty" value={country} onChange={(e) => setCountry(e.target.value)} required>
-          <option value="">Select a location</option>
-          {countries.map((c, index) => (
-            <option key={index} value={c}>{c}</option>
-          ))}
-        </select>
-        <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
-      </div>
-      <button className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2" type="submit">Submit</button>
-    </form>
+                    <div className="relative">
+                      <input className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none" type="text" placeholder="Name" name="user_name" value={name} onChange={(e) => setName(e.target.value)} required />
+                      <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                    </div>
+                    <div className="relative">
+                      <input className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none" type="tel" inputMode="numeric" placeholder="58 550 3940" pattern="[0-9]{9}" title="Please enter a 9-digit number" name="user_mobile" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                      <p className="absolute top-[7px] left-8 chfont font-medium">+971</p>
+                      <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                    </div>
+                    <div className="relative">
+                      <select className="h-10 w-full pl-8 text-base outline-none border appearance-none" name="user_cnty" value={country} onChange={(e) => setCountry(e.target.value)} required>
+                        <option value="">Select a location</option>
+                        {countries.map((c, index) => (
+                          <option key={index} value={c}>{c}</option>
+                        ))}
+                      </select>
+                      <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                    </div>
+                    <button className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2" type="submit">Submit</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -298,9 +312,8 @@ const VisaInner = () => {
 
       {/* mobile card */}
       <div
-        className={`${
-          isSticky ? "visible" : "hidden"
-        } px-10 bg-white border-2 md:hidden h-20 fixed bottom-0 left-0 right-0 grid grid-cols-1 gap-x-1 place-items-center`}
+        className={`${isSticky ? "visible" : "hidden"
+          } px-10 bg-white border-2 md:hidden h-20 fixed bottom-0 left-0 right-0 grid grid-cols-1 gap-x-1 place-items-center`}
       >
         {/* <div className="col-span-3 text-sm font-PoppinsSemibold leading-5">
                 <p className="text-gray-500">Visa Guaranteed on</p>
@@ -330,26 +343,26 @@ const VisaInner = () => {
                 get free visa consultation
               </h1>
               <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
-      <div className="relative">
-        <input className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none" type="text" placeholder="Name" name="user_name" value={name} onChange={(e) => setName(e.target.value)} required />
-        <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
-      </div>
-      <div className="relative">
-        <input className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none" type="tel" inputMode="numeric" placeholder="58 550 3940" pattern="[0-9]{9}" title="Please enter a 9-digit number" name="user_mobile" value={phone} onChange={(e) => setPhone(e.target.value)} required />
-        <p className="absolute top-[7px] left-8 chfont font-medium">+971</p>
-        <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
-      </div>
-      <div className="relative">
-        <select className="h-10 w-full pl-8 text-base outline-none border appearance-none" name="user_cnty" value={country} onChange={(e) => setCountry(e.target.value)} required>
-          <option value="">Select a location</option>
-          {countries.map((c, index) => (
-            <option key={index} value={c}>{c}</option>
-          ))}
-        </select>
-        <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
-      </div>
-      <button className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2" type="submit">Submit</button>
-    </form>
+                <div className="relative">
+                  <input className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none" type="text" placeholder="Name" name="user_name" value={name} onChange={(e) => setName(e.target.value)} required />
+                  <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                </div>
+                <div className="relative">
+                  <input className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none" type="tel" inputMode="numeric" placeholder="58 550 3940" pattern="[0-9]{9}" title="Please enter a 9-digit number" name="user_mobile" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                  <p className="absolute top-[7px] left-8 chfont font-medium">+971</p>
+                  <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                </div>
+                <div className="relative">
+                  <select className="h-10 w-full pl-8 text-base outline-none border appearance-none" name="user_cnty" value={country} onChange={(e) => setCountry(e.target.value)} required>
+                    <option value="">Select a location</option>
+                    {countries.map((c, index) => (
+                      <option key={index} value={c}>{c}</option>
+                    ))}
+                  </select>
+                  <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                </div>
+                <button className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2" type="submit">Submit</button>
+              </form>
             </div>
           </div>
         </div>
