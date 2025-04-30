@@ -155,7 +155,7 @@ const CreateVisasForm = () => {
 
 
       if (response.status === 200) {
-        // navigate("/manage-visas");
+        navigate("/manage-visas");
         // Handle success, like redirecting or showing a success message
         console.log("Visa created successfully", response.data);
         toast.success("Visa created successfully");
@@ -168,6 +168,8 @@ const CreateVisasForm = () => {
     } catch (error) {
       console.error("API call failed", error);
       toast.error("Error creating visa !!!");
+      setIsLoading(false);
+    } finally {
       setIsLoading(false);
     }
   };
@@ -236,7 +238,7 @@ const CreateVisasForm = () => {
             required
           />
         </div>
-        
+
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -308,18 +310,18 @@ const CreateVisasForm = () => {
         </div>
       </div>
       <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Meta Keywords
-          </label>
-          <textarea
-            rows="3"
-            placeholder="Meta Keywords..."
-            value={metaKeywords}
-            onChange={(e) => setMetaKeywords(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-visaclr focus:border-visaclr"
-            required
-          />
-        </div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Meta Keywords
+        </label>
+        <textarea
+          rows="3"
+          placeholder="Meta Keywords..."
+          value={metaKeywords}
+          onChange={(e) => setMetaKeywords(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-visaclr focus:border-visaclr"
+          required
+        />
+      </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Image alt
@@ -336,7 +338,7 @@ const CreateVisasForm = () => {
         <label className="block text-sm font-medium text-gray-700 mb-1">
           Description
         </label>
-        
+
         <ReactQuill
           value={description}
           onChange={(value) => setDescription(value)}
@@ -465,11 +467,10 @@ const CreateVisasForm = () => {
 
       <button
         type="submit"
-        className={`w-full bg-[#00a39a] text-white py-2 px-4 rounded-md hover:bg-[#136a65] ${
-          isLoading
+        className={`w-full bg-[#00a39a] text-white py-2 px-4 rounded-md hover:bg-[#136a65] ${isLoading
             ? "bg-gray-400 cursor-not-allowed"
             : "bg-[#00a39a] hover:bg-[#15756e]"
-        }`}
+          }`}
       >
         {isLoading ? "Submitting..." : "Submit visa"}
       </button>
