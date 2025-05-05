@@ -35,6 +35,7 @@ import ManageVisas from "./admin/pages/ManageVisas";
 import EditBlogPage from "./admin/pages/EditBlog";
 import EditVisaPage from "./admin/pages/EditVisa";
 import VisaGrid from "./pages/visas/VisaGrid";
+import Career from "./pages/career";
 
 
 
@@ -94,6 +95,7 @@ function App() {
               <Route path="/faq" element={<Faq />} />
               <Route path="/visa/:id" element={<VisaInner />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/career" element={<Career />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/blogs" element={<Blog />} />
               <Route

@@ -201,6 +201,15 @@ function LandHeader() {
             <Link
               className="hover:text-visaclr duration-200"
               onClick={() => setPopupOpen(false)}
+              to="/career"
+            >
+              Career
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-visaclr duration-200"
+              onClick={() => setPopupOpen(false)}
               to="/contact"
             >
               Contact Us
@@ -292,6 +301,11 @@ function LandHeader() {
                   <li>
                     <Link onClick={() => setPopupOpen(false)} to="/blogs">
                       Blogs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link onClick={() => setPopupOpen(false)} to="/career">
+                      Career
                     </Link>
                   </li>
                   <li>

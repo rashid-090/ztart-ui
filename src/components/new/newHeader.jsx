@@ -25,6 +25,10 @@ const myHeader = [
     url: `/blogs`,
   },
   {
+    title: `career`,
+    url: `/career`,
+  },
+  {
     title: `contact us`,
     url: `/contact`,
   },

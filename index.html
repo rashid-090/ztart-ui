@@ -8,43 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow">
   <title>ZtartVisa</title>
-
-
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TK4Z6NDK');</script>
+  <!-- End Google Tag Manager -->
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK4Z6NDK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div id="root"></div>
 
   <script type="module" src="/src/main.jsx"></script>
 
-
-  <script>
-    setTimeout(function () {
-      // Load jQuery
-      // Load Google Tag Manager gtag.js
-      const gtmScript = document.createElement("script");
-      gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-KX3WT70W21";
-      gtmScript.defer = true;
-      document.head.appendChild(gtmScript);
-
-      // Initialize Google Analytics configuration
-      const inlineGtagScript = document.createElement("script");
-      inlineGtagScript.defer = true;
-      inlineGtagScript.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag("js", new Date());
-        gtag("config", "G-KX3WT70W21");
-      `;
-      document.head.appendChild(inlineGtagScript);
-
-      // Add Google Site Verification Meta Tag
-      // const metaTag = document.createElement("meta");
-      // metaTag.name = "google-site-verification";
-      // metaTag.content = "C8bCJf6C-e9JD1UnLKL0i41tFqMJjouZ4dPhPq6Mq0Q";
-      // document.head.appendChild(metaTag);
-    }, 10000); // Adjust the delay as needed
-  </script>
   <script>
     setTimeout(() => {
       // Add the jQuery script dynamically
