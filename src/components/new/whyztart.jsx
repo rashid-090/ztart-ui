@@ -1,45 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import { cg1,cg2,cg3,cg4,cg5,cg6,bann3, bann2, bann4 } from '../../assets';
+import { cg1, cg2, cg3, cg4, cg5, cg6, bann3, bann2, bann4 } from '../../assets';
 import { Link } from 'react-router-dom';
 
 const data = [
   {
-    icon:`🏢`,
+    icon: `🏢`,
     image: cg1,
     title: 'Your Trusted Visa Service in Dubai',
     description:
       'Count on us for specialized Visa support from start to finish. Our experienced Visa consultants in Dubai ensure your process is smooth, whether you’re applying for a Tourist Visa, Visit Visa, or Business Visa.',
   },
   {
-    icon:`🎯`,
+    icon: `🎯`,
     image: cg2,
     title: 'Tailored Visa Solutions',
     description:
       'Need a Schengen Visa or a Business Visa? We’ve got you covered with customized services that meet all requirements for on-time approvals. Get Visa Solutions that are built around your specific needs.',
   },
   {
-    icon:`⚡`,
+    icon: `⚡`,
     image: cg3,
     title: 'Efficient Visa Processing',
     description:
       'Skip the wait and experience fast, efficient visa services. From Schengen Visa Assistance to Tourist Visa, our streamlined process delivers quick turnarounds, ensuring you’re travel-ready in no time.',
   },
   {
-    icon:`💰`,
+    icon: `💰`,
     image: cg4,
     title: 'Save Your Money',
     description:
       'Our expert advice helps you avoid unnecessary expenses—maximize your budget and get exactly what you need.',
   },
   {
-    icon:`🕰️`,
+    icon: `🕰️`,
     image: cg5,
     title: 'Reliable Visa Consultancy in Dubai',
     description:
       'Our dedicated team offers top-notch Visa Consultancy in Dubai, providing 24/7 customer support. We’re here to assist you through every step of the process.',
   },
   {
-    icon:`🤝`,
+    icon: `🤝`,
     image: cg6,
     title: 'Strong Government Connections',
     description:
@@ -72,15 +72,20 @@ const Whyztart = () => {
             Why ZtartVisa is <span className="text-visaclr">Your<br /> Trusted Choice</span> for<br /> On-Time Visa Approval
           </h4>
           <p className="text-xs xl:w-[70%] xl:text-justify md:text-base text-opacity-100 transition-all duration-700 ease-in-out opacity-100">
-          Ztartvisa is your trusted choice for on-time Visa approval. We provide the best Visa services in Dubai helping you get your Visa on time with no hassle. Whether it’s a Tourist or Visit Visa, we’ve got you covered.
+            Ztartvisa is your trusted choice for on-time Visa approval. We provide the best Visa services in Dubai helping you get your Visa on time with no hassle. Whether it’s a Tourist or Visit Visa, we’ve got you covered.
           </p>
           <Link to={'/contact'}><button className="bg-visaclr text-xs md:text-sm font-PoppinsMedium uppercase text-white px-5 py-3 rounded-full transition-all duration-700 ease-in-out opacity-100">START YOUR VISA PROCESS</button></Link>
         </div>
         <div className="ml-10 md:col-span-2 aspect-square md:aspect-auto xl:aspect-square rounded-[2rem] shadow-xl relative">
           <img
             className="absolute w-full h-full object-cover rounded-[2rem] transition-all duration-700 ease-in-out opacity-100"
-            src={currentItem.image}
+            src={currentItem.image}  // Original image (1500x1500)
             alt=""
+            // ↓ Add these ↓
+            width="338"
+            height="338"
+            style={{ objectFit: 'cover' }}
+            loading="lazy"
           />
           <div className="bg-[#00000098] rounded-[2rem] absolute w-full h-full"></div>
           <div className="z-10 relative text-white p-5 xl:p-14 h-full flex gap-1 xl:gap-3 flex-col justify-center">

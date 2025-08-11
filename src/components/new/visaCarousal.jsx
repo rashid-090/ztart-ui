@@ -112,7 +112,7 @@ const VisaCarousel = () => {
               <br /> for the <span className="text-visaclr">Most In-Demand Visa</span>
             </h3>
             <p className='text-xs md:text-base'>
-            Your First Choice for the Most Requested Visa.
+              Your First Choice for the Most Requested Visa.
             </p>
           </div>
           <div className="flex items-center justify-end gap-3 z-10">
@@ -131,54 +131,54 @@ const VisaCarousel = () => {
           </div>
         </div>
         <div className="pt-10">
-          {loading ? 
-        (<Loader />)
-        :
-        (
-          <Slider ref={sliderRef} {...settings}>
-            {visaData?.slice()
-            .reverse()?.map((visa, index) => (
-              <>
-              {/* {console.log(visaData)} */}
-              <div
-             key={visa._id}
-                className="bg-gray-100 p-0 pb-2 md:p-5 rounded-3xl shadow-lg hover:shadow-xl duration-200 mb-10"
-              >
-                <img
-                   onClick={() => navigate(`/visa/${visa.slug}`)}
-                  className="rounded-xl cursor-pointer xl:rounded-3xl aspect-square object-cover object-left-bottom shadow-lg"
-                  src={visa?.imageURL}
-                  alt={visa?.title}
-                  
-                  loading="lazy"
-                  width="800" // Set an explicit width based on the image's expected display size
-                  height="450" // Set an explicit height to maintain aspect ratio
-                  srcSet={`
-                ${visa?.imageURL}?w=400 400w,
-                ${visa?.imageURL}?w=800 800w,
-                ${visa?.imageURL}?w=1200 1200w
-                `} // Use srcSet for responsive images
-                  sizes="(max-width: 800px) 100vw, 800px"
-                />
-                <div className="flex flex-col gap-2 items-center text-center pt-5">
-                  <h4 className="text-sm md:text-base xl:text-xl font-PoppinsSemibold uppercase">{visa?.country}</h4>
-                  <button onClick={() => navigate(`/visa/${visa.slug}`)} className="text-xs md:text-sm font-PoppinsLight bg-black tracking-widest capitalize text-white px-5 py-1.5 rounded-lg ">
-                    explore
-                  </button>
-                </div>
-              </div>
-              </>
-            ))}
-          </Slider>
-        )  
-        }
-          
+          {loading ?
+            (<Loader />)
+            :
+            (
+              <Slider ref={sliderRef} {...settings}>
+                {visaData?.slice()
+                  .reverse()?.map((visa, index) => (
+                    <>
+                      {/* {console.log(visaData)} */}
+                      <div
+                        key={visa._id}
+                        className="bg-gray-100 p-0 pb-2 md:p-5 rounded-3xl shadow-lg hover:shadow-xl duration-200 mb-10"
+                      >
+
+                        <img
+                          onClick={() => navigate(`/visa/${visa.slug}`)}
+                          className="rounded-xl cursor-pointer xl:rounded-3xl aspect-square object-cover object-left-bottom shadow-lg"
+                          src={`${visa?.imageURL?.split('upload/')[0]}upload/w_313,h_179,c_fill,q_70/${visa?.imageURL?.split('upload/')[1]}`}
+                          alt={visa?.title}
+                          loading="lazy"
+                          width="313"
+                          height="179"
+                          srcSet={`
+    ${visa?.imageURL?.split('upload/')[0]}upload/w_313,h_179,c_fill,q_70/${visa?.imageURL?.split('upload/')[1]} 313w,
+    ${visa?.imageURL?.split('upload/')[0]}upload/w_626,h_358,c_fill,q_70/${visa?.imageURL?.split('upload/')[1]} 626w,
+    ${visa?.imageURL} 800w
+  `}
+                          sizes="(max-width: 640px) 313px, (max-width: 1024px) 626px, 800px"
+                        />
+                        <div className="flex flex-col gap-2 items-center text-center pt-5">
+                          <h4 className="text-sm md:text-base xl:text-xl font-PoppinsSemibold uppercase">{visa?.country}</h4>
+                          <button onClick={() => navigate(`/visa/${visa.slug}`)} className="text-xs md:text-sm font-PoppinsLight bg-black tracking-widest capitalize text-white px-5 py-1.5 rounded-lg ">
+                            explore
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  ))}
+              </Slider>
+            )
+          }
+
         </div>
         <div className='w-fit mx-auto pt-5'>
-        <Link to={'/visa'}>
-        <button className="bg-visaclr text-white px-5 xl:px-10 py-3 text-sm font-PoppinsMedium uppercase rounded-full">
-            view more
-          </button>
+          <Link to={'/visa'}>
+            <button className="bg-visaclr text-white px-5 xl:px-10 py-3 text-sm font-PoppinsMedium uppercase rounded-full">
+              view more
+            </button>
           </Link>
         </div>
       </section>

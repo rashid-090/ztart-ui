@@ -40,7 +40,7 @@ const test2 = () => {
   const [phone, setPhone] = useState("");
 
 
-  
+
   const images = [bann4, bann5];
 
   // Automatically change the image every 3 seconds
@@ -190,6 +190,10 @@ const test2 = () => {
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
             loading="lazy"
+            // ↓ Add these attributes ↓
+            width="378"
+            height="662"
+            style={{ objectFit: 'cover' }}
           />
         </div>
       </section>
@@ -205,8 +209,13 @@ const test2 = () => {
       <section className="w-11/12 xl:w-10/12 mx-auto relative rounded-3xl overflow-hidden">
         <img
           className="absolute w-full h-full object-cover object-center"
-          src={ban5}
+          src={ban5}  // Original image (1494x1091)
           alt=""
+          // ↓ Add these ↓
+          width="506"
+          height="276"
+          style={{ objectFit: 'cover' }}
+          loading="lazy"
         />
         <div className="bg-[#0000004a] absolute w-full h-full"></div>
         <div className="relative text-white flex flex-col gap-5 items-center justify-center text-center py-12 xl:py-32 w-[80%] mx-auto">
@@ -267,6 +276,11 @@ const test2 = () => {
           className="absolute object-center w-full h-full object-cover"
           src={baan22}
           alt=""
+          // Add these attributes:
+          width="902"
+          height="424"
+          loading="lazy"
+          decoding="async"
         />
         <div className="bg-[#00000066] absolute w-full h-full"></div>
         <div className="relative text-white flex flex-col gap-5 items-start justify-end pt-52 pb-5 md:pt-52 p-5 md:p-10 xl:pb-20 xl:w-[60%]">

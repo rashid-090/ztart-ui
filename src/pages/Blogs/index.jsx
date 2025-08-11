@@ -56,15 +56,14 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Find insightful Blogs from Ztartvisa | Your visa experts</title>
+        <title>Visa Updates & Blogs by the Best Visa Consultancy in Dubai</title>
         <link
           rel="canonical"
           href={`https://ztartvisa.com/blogs`}
         />
         <meta
           name="description"
-          content="Explore our blog for the latest updates on visa regulations and immigration news. Simplify your visa journey with Ztartvisa Dubai, UAE.
-"
+          content="Stay updated with Ztartvisa, your trusted visa consultancy in Dubai, for the latest visa updates, travel policies, visa-free countries, and expert travel tips."
         />
       </Helmet>
 
