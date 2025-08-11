@@ -78,32 +78,7 @@ const BlogInner = () => {
             </button>
           </Link>
 
-          {/* Table of Contents */}
-          {/* {toc.length > 0 && (
-            <div className="my-4 p-4 border-l-4 border-visaclr bg-gray-50 rounded-md">
-              <h2 className="text-lg font-semibold mb-2">Table of Contents</h2>
-              <ul className="space-y-1 pl-2 list-disc">
-                {toc.map((item) => (
-                  <li key={item.id} className="text-sm">
-                    <a
-                      href={`#${item.id}`}
-                      className="text-blue-600 hover:underline"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        const element = document.getElementById(item.id);
-                        if (element) {
-                          element.scrollIntoView({ behavior: "smooth", block: "start" });
-                        }
-                      }}
-                    >
-                      {item.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
- */}
+        
 
           {/* Blog Content */}
           <RichTextContent content={bdata.description} />
