@@ -144,13 +144,13 @@ function Header() {
       <nav className="px-5 md:px-6 p-4 sticky top-0 left-0 right-0 bg-white z-20 flex justify-between items-center border-b border-gray-100">
         <img
           onClick={() => navigate("/")}
-          className="cursor-pointer h-7 lg:h-9 w-40 object-fill hidden md:block"
+          className="cursor-pointer h-7 lg:h-9 w-40 object-contain hidden md:block"
           src={VisaLogo}
           alt="Logo"
         />
         <img
           onClick={() => navigate("/")}
-          className="cursor-pointer  h-9 w-9 object-fill block md:hidden"
+          className="cursor-pointer  h-9 w-9 object-contain block md:hidden"
           src={VisaLogoOnly}
           alt="Logo"
         />
