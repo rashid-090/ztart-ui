@@ -62,7 +62,7 @@ function Footer() {
         {shouldShowDiv && (
           <div className="fixed right-5 z-50 bottom-5 md:right-1 md:bottom-5 rounded-full">
             <a
-              href="https://api.whatsapp.com/send?phone=971544404197"
+              href="https://api.whatsapp.com/send?phone=971585087051"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with us on WhatsApp"
@@ -162,7 +162,7 @@ function Footer() {
               <a href="mailto:hello@ztartvisa.com">hello@ztartvisa.com</a>
             </li>
             <li>
-              <a href="tel:97156771737">+971 5677 1737</a>
+              <a href="tel:971585271991">+971 58 527 1991</a>
             </li>
           </ul>
         </div>
