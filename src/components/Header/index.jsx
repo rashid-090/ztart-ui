@@ -326,7 +326,7 @@ function Header() {
                     <a href="mailto:hello@ztartvisa.com">hello@ztartvisa.com</a>
                   </li>
                   <li>
-                    <a href="tel:04 528 2118">04 528 2118</a>
+                      <a href="tel:97156771737">+971 5677 1737</a>
                   </li>
                 </ul>
               </div>

@@ -70,7 +70,7 @@ const Contact = () => {
               <div className="flex flex-col gap-3">
                 <span className="flex gap-5">
                   <FiPhoneCall className="text-xl" />
-                  <a href="tel:045282118">04 528 2118</a>
+                  <a href="tel:97156771737">+971 5677 1737</a>
                 </span>
                 <span className="flex gap-5">
                   <MdOutlineMail className="text-xl" />
