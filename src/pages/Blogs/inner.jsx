@@ -57,7 +57,7 @@ const BlogInner = () => {
     <>
       <Helmet>
         <title>{bdata?.metaTitle}</title>
-        <link rel="canonical" href={`https://ztartvisa.com/blogs/${bdata?.slug}`} />
+        <link rel="canonical" href={`https://startvisa.com/blogs/${bdata?.slug}`} />
         <meta name="description" content={bdata.metaDescription} />
       </Helmet>
 

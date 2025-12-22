@@ -9,13 +9,12 @@ function AboutUs() {
     <>
       <Helmet>
         <title>
-          Find top services from Best Visa Agents in Dubai UAE | Ztartvisa
-        </title>
+Find top services from Best Visa Agents in Dubai UAE | Startvisa        </title>
         <meta
           name="description"
-          content="Discover why Ztartvisa is the best choice for visa services in Dubai. Our expert team simplifies the process, ensuring a seamless experience."
+          content="Discover why Startvisa is the best choice for visa services in Dubai. Our expert team simplifies the process, ensuring a seamless experience"
         />
-        <link rel="canonical" href="https://ztartvisa.com/about" />
+        <link rel="canonical" href="https://startvisa.com/about" />
       </Helmet>
       <div>
         <div className="mt-20 flex flex-col gap-3 md:gap-3 w-full text-center ">
@@ -23,7 +22,7 @@ function AboutUs() {
             Built to make your travel better
           </h2>
           <h1 className="text-3xl lg:text-7xl font-PoppinsExtraBold">
-            We are <span className="text-visaclr">ztartvisa</span>
+            We are <span className="text-visaclr">startvisa</span>
           </h1>
         </div>
         <div className="my-5 lg:my-20 w-full md:w-[95%] lg:w-[90%]  mx-auto max-h-fit pt-5  columns-2 md:columns-4 xl:columns-5 gap-3 md:gap-5 space-y-3 md:space-y-5">
@@ -42,28 +41,23 @@ function AboutUs() {
         </div>
         <div className="w-[90%] lg:w-[60%] flex flex-col gap-16 mx-auto pb-10">
           <p className="text-base lg:text-lg">
-            Ztartvisa: We make getting your visa a breeze, so you can focus on
-            the adventure!
+         Startvisa: We make getting your visa a breeze, so you can focus on the adventure!
             <br />
             <br />
-            Feeling overwhelmed by visa applications? Don't worry, Ztartvisa is
-            here to be your visa superhero! We're not some stuffy visa company
-            with endless rules, we're here to help you get your visa quickly and
-            easily.
+           Feeling overwhelmed by visa applications? Don't worry, Startvisa is here to be your visa
+superhero! We're not some stuffy visa company with endless rules, we're here to help you
+get your visa quickly and easily.
             <br />
             <br />
-            Think of us as your visa buddy. We'll answer all your questions in
-            plain English, help you gather the documents, and make sure your
-            application is strong and ready to go.
+          Think of us as your visa buddy. We'll answer all your questions in plain English, help you
+gather the documents, and make sure your application is strong and ready to go.
             <br />
             <br />
-            Whether you're a travel pro or just starting your globetrotting
-            journey, we've got your back. Let Ztartvisa handle the visa
-            headaches, so you can get excited about exploring the world!
+           Whether you're a travel pro or just starting your globetrotting journey, we've got your back.
+Let Startvisa handle the visa headaches, so you can get excited about exploring the world!
             <br />
             <br />
-            Get a free consultation today and see how easy
-            getting a visa can be!
+         Get a free consultation today and see how easy getting a visa can be!
           </p>
           <div className="w-full hidden md:flex justify-center align-middle">
             <Link to={'/visa'} className="bg-visaclr text-base lg:text-lg text-white rounded-3xl hover:bg-visaclrhvr duration-150 px-24 py-2.5">
@@ -73,7 +67,7 @@ function AboutUs() {
         </div>
         {/*  */}
         {/* <div className='w-[90%] lg:w-[50%] mx-auto mt-20'>
-          <h2 className='text-2xl lg:text-5xl font-PoppinsBold'>ztartvisa's social reach:</h2>
+          <h2 className='text-2xl lg:text-5xl font-PoppinsBold'>startvisa's social reach:</h2>
         </div> */}
         {/* insta */}
         {/* <div className='w-[90%] lg:w-[70%] mx-auto'>

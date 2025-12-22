@@ -144,9 +144,9 @@ const VisaInner = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-    const serviceId = "service_rvuqpgc";
-    const templateId = "template_w6dc66m";
-    const publicKey = "PR2g2ETNbDb0653Ge";
+     const serviceId = "service_z7xu4jk";
+    const templateId = "template_3iadmge";
+    const publicKey = "F2kfLKAaSE8fINfl7";
 
     // Create a new object that contains dynamic template params
     const templateParams = {
@@ -178,23 +178,23 @@ const VisaInner = () => {
         <meta name="keywords" content={visadata?.metaKeywords || ''} />
         <link
           rel="canonical"
-          href={`https://ztartvisa.com/visa/${visadata?.slug}`}
+          href={`https://startvisa.com/visa/${visadata?.slug}`}
         />
 
         {/* Open Graph */}
         <meta property="og:title" content={visadata?.metaTitle} />
         <meta property="og:description" content={visadata?.metaDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://ztartvisa.com/visa/${visadata?.slug}`} />
-        <meta property="og:image" content={visadata?.imageURL || 'https://ztartvisa.com/default-og.jpg'} />
-        <meta property="og:site_name" content="ZtartVisa" />
+        <meta property="og:url" content={`https://startvisa.com/visa/${visadata?.slug}`} />
+        <meta property="og:image" content={visadata?.imageURL || 'https://startvisa.com/default-og.jpg'} />
+        <meta property="og:site_name" content="StartVisa" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={visadata?.metaTitle} />
         <meta name="twitter:description" content={visadata?.metaDescription} />
-        <meta name="twitter:image" content={visadata?.imageURL || 'https://ztartvisa.com/default-twitter.jpg'} />
-        <meta name="twitter:site" content="@ztartvisa" />
+        <meta name="twitter:image" content={visadata?.imageURL || 'https://startvisa.com/default-twitter.jpg'} />
+        <meta name="twitter:site" content="@startvisa" />
       </Helmet>
 
       {isLoading ? (

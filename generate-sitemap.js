@@ -7,7 +7,7 @@ import axios from 'axios';
 
 async function generateSitemap() {
 
-  const baseUrl = 'https://ztart-server-production.up.railway.app'
+  const baseUrl = 'https://ztartserver.dostudio.info'
 
   try {
     // Fetch dynamic data
@@ -66,7 +66,7 @@ async function generateSitemap() {
     const links = [...blogLinks, ...visaLinks,...staticPages];
 
     // Create a sitemap stream
-    const stream = new SitemapStream({ hostname: 'https://ztartvisa.com' });
+    const stream = new SitemapStream({ hostname: 'https://startvisa.com' });
 
     // Pipe the links into the stream
     Readable.from(links).pipe(stream).pipe(createWriteStream('./sitemap.xml'));

@@ -67,9 +67,9 @@ const test2 = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-    const serviceId = "service_rvuqpgc";
-    const templateId = "template_bp2ycsp";
-    const publicKey = "PR2g2ETNbDb0653Ge";
+     const serviceId = "service_z7xu4jk";
+    const templateId = "template_lm5nfq2";
+    const publicKey = "F2kfLKAaSE8fINfl7";
 
     // Create a new object that contains dynamic template params
     const templateParams = {
@@ -92,14 +92,14 @@ const test2 = () => {
     <>
       <Helmet>
         <title>Best Visa service in Dubai | Visa Agency in Dubai, UAE</title>
-        <link rel="canonical" href={`https://ztartvisa.com`} />
+        <link rel="canonical" href={`https://startvisa.com`} />
         <meta
           name="keywords"
           content="Visa Service in Dubai, Best Visa service in Dubai, Visa Services in Dubai, Best Visa Services in Dubai, Best Visa Service in UAE, Visa Agency in Dubai, Best Visa agency in Dubai, Visa Agents in Dubai, Best Visa Agents in Dubai, Visa Consultant in Dubai, Best Visa Consultant in Dubai, Visa Consultants in Dubai, Best Visa Consultants in Dubai, Visa Consultancy in Dubai, Best Visa Consultancy in Dubai, Schengen Visa Consultant in Dubai, Schengen Visa Consultants in Dubai, Schengen Visa Consultancy in Dubai, Best Schengen Visa Consultant in Dubai, Best Schengen Visa Consultants in Dubai, Best Schengen Visa Consultancy in Dubai, Tourist visa from from, Visit visa from Dubai"
         />
         <meta
           name="description"
-          content="Simplify your travel dreams with Ztartvisa. Best Visa services in Dubai, UAE offering expert guidance & efficient processing for all visa types."
+          content="Startvisa, the Best Visa Agency in Dubai, Offers Visa Services for Uae Residents Including Schengen, Tourist & Business Visas. Apply Now for Fast and on-time Approval."
         />
         <meta
           property="og:title"
@@ -107,7 +107,7 @@ const test2 = () => {
         />
         <meta
           property="og:description"
-          content="Simplify your travel dreams with Ztartvisa. Best Visa services in Dubai, UAE offering expert guidance & efficient processing for all visa types."
+          content="Startvisa, the Best Visa Agency in Dubai, Offers Visa Services for Uae Residents Including Schengen, Tourist & Business Visas. Apply Now for Fast and on-time Approval."
         />
       </Helmet>
       <NewHeader />
@@ -118,10 +118,9 @@ const test2 = () => {
             <span className="font-PoppinsLight">Visa on time,</span> guaranteed
           </h1>
           <p className="text-xs md:text-sm leading-loose">
-            Your journey can be easier and more convenient with the best Visa
-            services in Dubai. We provide fast, hassle-free processing to help
-            you get the right Visa quickly. Let us take care of everything, so
-            you can focus on what matters.
+            Your journey can be easier and more convenient with the <b>Best Visa Agency in Dubai</b>. We
+provide fast, hassle-free processing to help you get the right Visa quickly. Let us take care of
+everything, so you can focus on what matters.
           </p>
           <form
             onSubmit={handleSubmit}
@@ -223,15 +222,13 @@ const test2 = () => {
             Simplifying Your Visa Journey
           </h4>
           <p className="hidden md:block text-xs xl:text-base">
-            Tired of waiting and dealing with confusing Visa steps? At
-            Ztartvisa, we provide the best Visa services in Dubai, making the
-            process fast and simple. Our expert team helps you with every step
-            to get your Tourist or Visit Visa approved quickly and easily. Apply
-            now for a stress-free experience.
+           Tired of waiting and dealing with confusing Visa steps? At Startvisa, we provide the
+best Visa services in Dubai, making the process fast and simple. Our expert team
+helps you with every step to get your Tourist or Visit Visa approved quickly and
+easily. Apply now for a stress-free experience.
           </p>
           <p className="md:hidden text-xs xl:text-base">
-            Tired of waiting and dealing with confusing Visa steps? At
-            Ztartvisa, we provide...
+            Tired of waiting and dealing with confusing Visa steps? At Startvisa, we provide...
           </p>
 
           <Link to={"/contact"}>

@@ -1933,37 +1933,30 @@ export const InstaData = [
 
 export const FaqPageData = [
   {
-    title: `1. So, what's the Ztartvisa deal?`,
-    desc: `Think of us as your visa superheroes! We navigate the
-      complex world of visa applications, helping individuals and
-      businesses conquer visa hurdles and land in their dream
-      destinations smoothly.`,
+    title: `1.How can UAE residents apply for a Schengen visa?`,
+    desc: `UAE residents can apply through the embassy or official visa centre, or through
+StartVisa, one of the best visa agencies in Dubai, for a smooth and reliable application.`,
   },
   {
-    title: `2. Why choose Ztartvisa over the "wing it" approach?`,
-    desc: `Picture this: stacks of confusing paperwork, missed
-      deadlines, and potential visa rejection. With Ztartvisa, you
-      get experienced guides by your side, ensuring your
-      application is complete, accurate, and ready to impress
-      the visa gods.`,
+    title: `2. Can I get a Schengen visa in 3 days?`,
+    desc: `Usually no. Schengen visas normally take around 15 days to process. In rare urgent cases, it
+may be faster, but it is not guaranteed.`,
   },
   {
-    title: `3. How much does this visa wizardry cost?`,
-    desc: `Our competitive service fees vary depending on your
-      specific visa needs and chosen package. We'll provide a
-      transparent cost breakdown before you take the plunge.`,
+    title: `3. How long is a Schengen visa valid?`,
+    desc: `A Schengen visa generally allows a stay of up to 90 days within 180 days. StartVisa helps applicants
+understand their visa validity, entry type, and stay duration before travel.`,
   },
   {
-    title: `4. Can you guarantee I'll get my visa?`,
-    desc: `While we can't wave a magic wand and guarantee
-      approval (sorry, no Harry Potter here!), our expertise
-      significantly increases your chances of success. We'll
-      help you avoid common pitfalls and put your best foot
-      forward.`,
+    title: `4. What documents are required for a Schengen visa?`,
+    desc: `You need a passport, Emirates ID & residence visa, photos, bank statement,
+employment/business proof, travel insurance, etc.. Choose StartVisa for an easy and error-free
+Schengen visa application.`,
   },
   {
-    title: `5. How do I get started with Ztartvisa?`,
-    desc: `It's easy! Visit our website,call us, or email. We'd love to chat about your visa journey and answer any questions you might have. Remember, with Ztartvisa, visa success is just a click, call, or email away!`,
+    title: `5. What is the role of StartVisa in visa assistance?`,
+    desc: `StartVisa provides expert guidance, document verification, appointment support, and
+application tracking, helping applicants submit accurate and complete visa applications.`,
   },
 ];
 

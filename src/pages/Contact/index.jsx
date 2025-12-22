@@ -21,9 +21,9 @@ const Contact = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-    const serviceId = "service_rvuqpgc";
-    const templateId = "template_bp2ycsp";
-    const publicKey = "PR2g2ETNbDb0653Ge";
+    const serviceId = "service_z7xu4jk";
+    const templateId = "template_lm5nfq2";
+    const publicKey = "F2kfLKAaSE8fINfl7";
 
     // Create a new object that contains dynamic template params
     const templateParams = {
@@ -48,14 +48,13 @@ const Contact = () => {
   return (
     <>
     <Helmet>
-        <title>Contact us for best visa service | Ztartvisa Dubai, UAE
+        <title>Contact us for best visa service | startvisa Dubai, UAE
         </title>
         <link
           rel="canonical"
-          href={`https://ztartvisa.com/contact`}
+          href={`https://startvisa.com/contact`}
         />
-        <meta name="description" content="Need help with your Dubai visa process? Ztartvisa offers expert guidance and support. Contact us today for a seamless visa experience.
-" />
+        <meta name="description" content="Need help with your Dubai visa process? Startvisa offers expert guidance and support. Contact us today for a seamless visa experience." />
       </Helmet>
       <div className="w-11/12 md:w-11/12 xl:w-9/12 mx-auto h-full ">
         <div className="my-10 rounded-3xl overflow-hidden bg-[#f6f6f6] border shadow-xl">
@@ -74,7 +73,7 @@ const Contact = () => {
                 </span>
                 <span className="flex gap-5">
                   <MdOutlineMail className="text-xl" />
-                  <a href="mailto:hello@ztartvisa.com">hello@ztartvisa.com</a>
+                  <a href="mailto:hello@startvisa.com">hello@startvisa.com</a>
                 </span>
                 <span className="flex gap-5">
                   <FaLocationDot className="text-2xl" />

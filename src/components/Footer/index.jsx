@@ -89,7 +89,7 @@ function Footer() {
           <ul className="text-visaclr flex gap-3 mt-5 ml-2 text-2xl">
             <li className="hover:-translate-y-1 duration-200">
               <a
-                href="https://www.instagram.com/ztartvisa"
+                href="https://www.instagram.com/start_visa_?igsh=MXQ1b2k3Y3hkM2Yxaw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
@@ -159,7 +159,7 @@ function Footer() {
           </h2>
           <ul className="text-base pt-5 flex flex-col gap-2">
             <li>
-              <a href="mailto:hello@ztartvisa.com">hello@ztartvisa.com</a>
+              <a href="mailto:hello@startvisa.com">hello@startvisa.com</a>
             </li>
             <li>
               <a href="tel:971585271991">+971 58 527 1991</a>
@@ -186,7 +186,7 @@ function Footer() {
       </footer>
       <div className="pl-4 md:pl-0 md:text-center pb-5 leading-relaxed">
         <p className="text-[9px] md:text-[11px]">
-          Copyright © 2024 Ztartvisa Documents Clearing Services. All rights
+          Copyright © 2024 Startvisa Documents Clearing Services. All rights
           reserved.
         </p>
         <p className="text-[9px] md:text-[11px]">

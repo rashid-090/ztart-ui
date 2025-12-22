@@ -1,647 +1,143 @@
-import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import {
-  InsatProf,
-  insatsvg,
-  relaxImg,
-  relaxImg2,
-  Trustpilotgoogle,
-  ztartnews,
-  PriceComp,
-  ztartoffice,
-  Scn1,
-  diamondsvg,
-  sheildsvg,
-  heartsvg,
-  Grp2,
-  Grp3,
-  Grp4,
-  Buddy,
-  Solutions,
-  Savemoney,
-} from "../assets";
-import {
-  TravelCarousal,
-  BetterDeal,
-  Testimonial,
-  Demo,
-  VisaImageCarousal,
-  InsatFeed
-} from "../components";
-import { TiTick } from "react-icons/ti";
-import { IoMdStar } from "react-icons/io";
-import { FcGoogle } from "react-icons/fc";
-import { FaArrowUp } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
-import { IoCloseSharp } from "react-icons/io5";
-import { AiOutlineUser } from "react-icons/ai";
-import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
-import { IoLocationOutline } from "react-icons/io5";
-import { IoSendSharp } from "react-icons/io5";
-import axios from "axios";
-import { toast } from "react-toastify";
+RewriteEngine On
 
-function Homepage() {
-  const [open, setOpen] = useState(false);
-  const [isSticky, setSticky] = useState(false);
-  const modalRef = useRef(null);
-  open
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "");
+# Main Pages
+Redirect 301 https://ztartvisa.com/ https://startvisa.com/
+Redirect 301 https://ztartvisa.com/about https://startvisa.com/about
+Redirect 301 https://ztartvisa.com/visa https://startvisa.com/visa
+Redirect 301 https://ztartvisa.com/visa/poland-visa-from-dubai https://startvisa.com/visa/poland-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/thailand-visa-from-dubai https://startvisa.com/visa/thailand-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/saudi-arabia-visa-from-dubai https://startvisa.com/visa/saudi-arabia-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/mexico-visa-from-dubai https://startvisa.com/visa/mexico-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/kenya-visa-from-dubai https://startvisa.com/visa/kenya-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/south-africa-visit-visa-from-dubai https://startvisa.com/visa/south-africa-visit-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/south-korea-visit-visa-from-dubai https://startvisa.com/visa/south-korea-visit-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/germany-visa-from-dubai https://startvisa.com/visa/germany-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/china-visa-from-dubai https://startvisa.com/visa/china-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/ireland-visit-visa-from-dubai https://startvisa.com/visa/ireland-visit-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/usa-visit-visa-from-dubai https://startvisa.com/visa/usa-visit-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/turkey-visa-from-dubai https://startvisa.com/visa/turkey-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/france-visa-dubai https://startvisa.com/visa/france-visa-dubai
+Redirect 301 https://ztartvisa.com/visa/canada-tourist-visa-from-dubai https://startvisa.com/visa/canada-tourist-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/uk-visit-visa-from-dubai https://startvisa.com/visa/uk-visit-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/japan-visit-visa-from-dubai https://startvisa.com/visa/japan-visit-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/spain-visa-dubai https://startvisa.com/visa/spain-visa-dubai
+Redirect 301 https://ztartvisa.com/visa/switzerland-visa-from-dubai https://startvisa.com/visa/switzerland-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/italy-visit-visa-from-dubai https://startvisa.com/visa/italy-visit-visa-from-dubai
+Redirect 301 https://ztartvisa.com/visa/australia-visa-dubai https://startvisa.com/visa/australia-visa-dubai
 
-  const [formData, setFormData] = useState({
-    customerName: "",
-    mobileNo: "",
-    countryId: "",
-  });
-  
+# Blogs
+Redirect 301 https://ztartvisa.com/blogs https://startvisa.com/blogs
+Redirect 301 https://ztartvisa.com/blogs/how-to-apply-for-a-philippines-visa-from-dubai https://startvisa.com/blogs/how-to-apply-for-a-philippines-visa-from-dubai
+Redirect 301 https://ztartvisa.com/blogs/brazil-visa-for-uae-residents https://startvisa.com/blogs/brazil-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/best-country-to-visit-in-europe-for-first-time-from-uae https://startvisa.com/blogs/best-country-to-visit-in-europe-for-first-time-from-uae
+Redirect 301 https://ztartvisa.com/blogs/vietnam-visa-for-uae-residents https://startvisa.com/blogs/vietnam-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/malaysia-e-visa-for-uae-residents https://startvisa.com/blogs/malaysia-e-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/georgia-visa-requirements-for-uae-residents https://startvisa.com/blogs/georgia-visa-requirements-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/thailand-visa-requirements-for-uae-residents https://startvisa.com/blogs/thailand-visa-requirements-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/best-new-year-destinations-in-the-world https://startvisa.com/blogs/best-new-year-destinations-in-the-world
+Redirect 301 https://ztartvisa.com/blogs/kenya-visa-for-uae-residents https://startvisa.com/blogs/kenya-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/best-place-to-spend-christmas-in-europe https://startvisa.com/blogs/best-place-to-spend-christmas-in-europe
+Redirect 301 https://ztartvisa.com/blogs/tanzania-visa-for-uae-residents https://startvisa.com/blogs/tanzania-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/best-places-to-visit-in-europe-in-december https://startvisa.com/blogs/best-places-to-visit-in-europe-in-december
+Redirect 301 https://ztartvisa.com/blogs/azerbaijan-visa-for-uae-residents https://startvisa.com/blogs/azerbaijan-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/how-to-apply-china-visa-from-dubai https://startvisa.com/blogs/how-to-apply-china-visa-from-dubai
+Redirect 301 https://ztartvisa.com/blogs/how-to-apply-for-uk-tourist-visa-from-dubai https://startvisa.com/blogs/how-to-apply-for-uk-tourist-visa-from-dubai
+Redirect 301 https://ztartvisa.com/blogs/coachella-2026-us-visa-application-guide-for-uae-residents https://startvisa.com/blogs/coachella-2026-us-visa-application-guide-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/australia-visa-from-uae https://startvisa.com/blogs/australia-visa-from-uae
+Redirect 301 https://ztartvisa.com/blogs/fifa-world-cup-2026-in-mexico https://startvisa.com/blogs/fifa-world-cup-2026-in-mexico
+Redirect 301 https://ztartvisa.com/blogs/new-zealand-visa-for-uae-residents https://startvisa.com/blogs/new-zealand-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/russian-visa-for-uae-residents https://startvisa.com/blogs/russian-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/egypt-visa-requirements-for-uae-residents https://startvisa.com/blogs/egypt-visa-requirements-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/halloween-2025-in-the-usa https://startvisa.com/blogs/halloween-2025-in-the-usa
+Redirect 301 https://ztartvisa.com/blogs/iceland-visa-from-dubai https://startvisa.com/blogs/iceland-visa-from-dubai
+Redirect 301 https://ztartvisa.com/blogs/south-africa-visa-for-uae-residents https://startvisa.com/blogs/south-africa-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/vietnam-visa-policy https://startvisa.com/blogs/vietnam-visa-policy
+Redirect 301 https://ztartvisa.com/blogs/documents-required-for-a-schengen-tourist-visa-application https://startvisa.com/blogs/documents-required-for-a-schengen-tourist-visa-application
+Redirect 301 https://ztartvisa.com/blogs/visa-free-countries-for-indian-passport-holders https://startvisa.com/blogs/visa-free-countries-for-indian-passport-holders
+Redirect 301 https://ztartvisa.com/blogs/-e-visa-countries-for-uae-residents https://startvisa.com/blogs/-e-visa-countries-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/best-countries-to-visit-in-december-from-dubai https://startvisa.com/blogs/best-countries-to-visit-in-december-from-dubai
+Redirect 301 https://ztartvisa.com/blogs/us-visa-application-fee-update-visa-integrity-fee-explained https://startvisa.com/blogs/us-visa-application-fee-update-visa-integrity-fee-explained
+Redirect 301 https://ztartvisa.com/blogs/visa-free-countries-for-uae-residents-2025 https://startvisa.com/blogs/visa-free-countries-for-uae-residents-2025
+Redirect 301 https://ztartvisa.com/blogs/australian-visa-from-uae https://startvisa.com/blogs/australian-visa-from-uae
+Redirect 301 https://ztartvisa.com/blogs/indonesia-entry-requirements-digital-arrival-card-rules https://startvisa.com/blogs/indonesia-entry-requirements-digital-arrival-card-rules
+Redirect 301 https://ztartvisa.com/blogs/france-visa-rejection-reasons-and-how-to-avoid-them https://startvisa.com/blogs/france-visa-rejection-reasons-and-how-to-avoid-them
+Redirect 301 https://ztartvisa.com/blogs/us-visa-update-us-visa-interview-waiver-suspended- https://startvisa.com/blogs/us-visa-update-us-visa-interview-waiver-suspended-
+Redirect 301 https://ztartvisa.com/blogs/turkey-visa-requirements-for-uae-residents- https://startvisa.com/blogs/turkey-visa-requirements-for-uae-residents-
+Redirect 301 https://ztartvisa.com/blogs/chinese-visa-application-process-and-visa-requirements https://startvisa.com/blogs/chinese-visa-application-process-and-visa-requirements
+Redirect 301 https://ztartvisa.com/blogs/how-to-apply-for-super-priority-visa-uk- https://startvisa.com/blogs/how-to-apply-for-super-priority-visa-uk-
+Redirect 301 https://ztartvisa.com/blogs/us-visa-waiver-countries-2025-visa-free-travel-to-the-usa https://startvisa.com/blogs/us-visa-waiver-countries-2025-visa-free-travel-to-the-usa
+Redirect 301 https://ztartvisa.com/blogs/apply-for-schengen-visa-from-uae-schengen-visa-guide https://startvisa.com/blogs/apply-for-schengen-visa-from-uae-schengen-visa-guide
+Redirect 301 https://ztartvisa.com/blogs/germanys-oktoberfest-visa-requirements-for-uae-residents https://startvisa.com/blogs/germanys-oktoberfest-visa-requirements-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/chinese-visa-for-uae-residents-chinese-visa-update https://startvisa.com/blogs/chinese-visa-for-uae-residents-chinese-visa-update
+Redirect 301 https://ztartvisa.com/blogs/-la-tomatina-festival-visa-guide-for-world%E2%80%99s-largest-food-fest https://startvisa.com/blogs/-la-tomatina-festival-visa-guide-for-world%E2%80%99s-largest-food-fest
+Redirect 301 https://ztartvisa.com/blogs/best-couples-destinations https://startvisa.com/blogs/best-couples-destinations
+Redirect 301 https://ztartvisa.com/blogs/schengen-travel-guide-for-uae-residents https://startvisa.com/blogs/schengen-travel-guide-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/switzerland-updates-schengen-visa-rules-for-indians https://startvisa.com/blogs/switzerland-updates-schengen-visa-rules-for-indians
+Redirect 301 https://ztartvisa.com/blogs/visa-on-arrival-countries-for-uae-residents https://startvisa.com/blogs/visa-on-arrival-countries-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/us-visa-interview-waiver-2025 https://startvisa.com/blogs/us-visa-interview-waiver-2025
+Redirect 301 https://ztartvisa.com/blogs/schengen-visa-requirement https://startvisa.com/blogs/schengen-visa-requirement
+Redirect 301 https://ztartvisa.com/blogs/kazakhstan-visa-for-uae-residents https://startvisa.com/blogs/kazakhstan-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/-reasons-for-uk-visa-refusal-visa-rejection https://startvisa.com/blogs/-reasons-for-uk-visa-refusal-visa-rejection
+Redirect 301 https://ztartvisa.com/blogs/uae-travel-trends-2025-top-summer-destinatiosns https://startvisa.com/blogs/uae-travel-trends-2025-top-summer-destinatiosns
+Redirect 301 https://ztartvisa.com/blogs/new-schengen-visa-rules-for-uae-residents https://startvisa.com/blogs/new-schengen-visa-rules-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/japan-travel-requirements https://startvisa.com/blogs/japan-travel-requirements
+Redirect 301 https://ztartvisa.com/blogs/australia-visa-fee-hike-2025 https://startvisa.com/blogs/australia-visa-fee-hike-2025
+Redirect 301 https://ztartvisa.com/blogs/germany-schengen-visa-rejection https://startvisa.com/blogs/germany-schengen-visa-rejection
+Redirect 301 https://ztartvisa.com/blogs/gen-z-travel-trends-top-10-destinations-in-2025 https://startvisa.com/blogs/gen-z-travel-trends-top-10-destinations-in-2025
+Redirect 301 https://ztartvisa.com/blogs/gcc-grand-tours-visa https://startvisa.com/blogs/gcc-grand-tours-visa
+Redirect 301 https://ztartvisa.com/blogs/china-visa-free-new-update-for-2025-travelers https://startvisa.com/blogs/china-visa-free-new-update-for-2025-travelers
+Redirect 301 https://ztartvisa.com/blogs/mexico-entry-update https://startvisa.com/blogs/mexico-entry-update
+Redirect 301 https://ztartvisa.com/blogs/top-reasons-for-schengen-visa-rejections https://startvisa.com/blogs/top-reasons-for-schengen-visa-rejections
+Redirect 301 https://ztartvisa.com/blogs/2026-fifa-world-cup https://startvisa.com/blogs/2026-fifa-world-cup
+Redirect 301 https://ztartvisa.com/blogs/us-visa-news-social-media-requirement https://startvisa.com/blogs/us-visa-news-social-media-requirement
+Redirect 301 https://ztartvisa.com/blogs/philippines-travel-visa-update https://startvisa.com/blogs/philippines-travel-visa-update
+Redirect 301 https://ztartvisa.com/blogs/us-visa-ban-2025 https://startvisa.com/blogs/us-visa-ban-2025
+Redirect 301 https://ztartvisa.com/blogs/eu-new-entry-exit-system https://startvisa.com/blogs/eu-new-entry-exit-system
+Redirect 301 https://ztartvisa.com/blogs/germany-proposes-5-year-schengen-visa https://startvisa.com/blogs/germany-proposes-5-year-schengen-visa
+Redirect 301 https://ztartvisa.com/blogs/japan-&-germany-for-uae-residents https://startvisa.com/blogs/japan-&-germany-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/visa-free-countries-for-uae-residents https://startvisa.com/blogs/visa-free-countries-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/family-schengen-visa-from-uae https://startvisa.com/blogs/family-schengen-visa-from-uae
+Redirect 301 https://ztartvisa.com/blogs/us-visa-policy-changes https://startvisa.com/blogs/us-visa-policy-changes
+Redirect 301 https://ztartvisa.com/blogs/germany-tourist-visa-guide https://startvisa.com/blogs/germany-tourist-visa-guide
+Redirect 301 https://ztartvisa.com/blogs/japan-visa-requirements https://startvisa.com/blogs/japan-visa-requirements
+Redirect 301 https://ztartvisa.com/blogs/understanding-visa-types https://startvisa.com/blogs/understanding-visa-types
+Redirect 301 https://ztartvisa.com/blogs/us-visa-renewal https://startvisa.com/blogs/us-visa-renewal
+Redirect 301 https://ztartvisa.com/blogs/reasons-behind-visa-rejection https://startvisa.com/blogs/reasons-behind-visa-rejection
+Redirect 301 https://ztartvisa.com/blogs/eid-holidays-for-uae-residents https://startvisa.com/blogs/eid-holidays-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/types-of-us-visas https://startvisa.com/blogs/types-of-us-visas
+Redirect 301 https://ztartvisa.com/blogs/us-visa-processing https://startvisa.com/blogs/us-visa-processing
+Redirect 301 https://ztartvisa.com/blogs/dubai-visa-services https://startvisa.com/blogs/dubai-visa-services
+Redirect 301 https://ztartvisa.com/blogs/canada-visa-update https://startvisa.com/blogs/canada-visa-update
+Redirect 301 https://ztartvisa.com/blogs/turkey-with-a-schengen-visa https://startvisa.com/blogs/turkey-with-a-schengen-visa
+Redirect 301 https://ztartvisa.com/blogs/impact-of-new-uk-visa-rules https://startvisa.com/blogs/impact-of-new-uk-visa-rules
+Redirect 301 https://ztartvisa.com/blogs/to-do-in-kenya-2025 https://startvisa.com/blogs/to-do-in-kenya-2025
+Redirect 301 https://ztartvisa.com/blogs/saudi-visa-from-dubai-for-simec-2025 https://startvisa.com/blogs/saudi-visa-from-dubai-for-simec-2025
+Redirect 301 https://ztartvisa.com/blogs/north-american-travel-visa https://startvisa.com/blogs/north-american-travel-visa
+Redirect 301 https://ztartvisa.com/blogs/guide-to-apply-for-a-south-africa-visa https://startvisa.com/blogs/guide-to-apply-for-a-south-africa-visa
+Redirect 301 https://ztartvisa.com/blogs/exploring-the-uk-beyond-london https://startvisa.com/blogs/exploring-the-uk-beyond-london
+Redirect 301 https://ztartvisa.com/blogs/expert-schengen-visa-consultant-in-dubai https://startvisa.com/blogs/expert-schengen-visa-consultant-in-dubai
+Redirect 301 https://ztartvisa.com/blogs/best-places-to-visit-switzerland-in-2025 https://startvisa.com/blogs/best-places-to-visit-switzerland-in-2025
+Redirect 301 https://ztartvisa.com/blogs/usa-tourist-visa-from-dubai-and-esta https://startvisa.com/blogs/usa-tourist-visa-from-dubai-and-esta
+Redirect 301 https://ztartvisa.com/blogs/understanding-schengen-visa-from-dubai https://startvisa.com/blogs/understanding-schengen-visa-from-dubai
+Redirect 301 https://ztartvisa.com/blogs/requirements-for-uae-residents-travel-dream-destinations https://startvisa.com/blogs/requirements-for-uae-residents-travel-dream-destinations
+Redirect 301 https://ztartvisa.com/blogs/choose-right-visa-consultancy-in-dubai https://startvisa.com/blogs/choose-right-visa-consultancy-in-dubai
+Redirect 301 https://ztartvisa.com/blogs/switzerland-visa-from-dubai-step-by-step-guidelines https://startvisa.com/blogs/switzerland-visa-from-dubai-step-by-step-guidelines
+Redirect 301 https://ztartvisa.com/blogs/things-to-know-before-applying-for-a-visa-to-canada https://startvisa.com/blogs/things-to-know-before-applying-for-a-visa-to-canada
+Redirect 301 https://ztartvisa.com/blogs/your-gateway-to-italy-italy-visa-from-dubai https://startvisa.com/blogs/your-gateway-to-italy-italy-visa-from-dubai
+Redirect 301 https://ztartvisa.com/blogs/visa-requirements-for-popular-travel-destinations-in-2024 https://startvisa.com/blogs/visa-requirements-for-popular-travel-destinations-in-2024
+Redirect 301 https://ztartvisa.com/blogs/common-reasons-for-uk-visa-refusals-and-how-to-prevent-them https://startvisa.com/blogs/common-reasons-for-uk-visa-refusals-and-how-to-prevent-them
+Redirect 301 https://ztartvisa.com/blogs/how-to-apply-for-a-turkey-tourist-visa-for-uae-residents https://startvisa.com/blogs/how-to-apply-for-a-turkey-tourist-visa-for-uae-residents
+Redirect 301 https://ztartvisa.com/blogs/a-comprehensive-guide-on-us-visa-renewal-from-uae https://startvisa.com/blogs/a-comprehensive-guide-on-us-visa-renewal-from-uae
+Redirect 301 https://ztartvisa.com/blogs/how-to-get-schengen-visa-a-complete-guide-for-uae-travellers https://startvisa.com/blogs/how-to-get-schengen-visa-a-complete-guide-for-uae-travellers
+Redirect 301 https://ztartvisa.com/blogs/is-travel-insurance-must-for-international-travelers https://startvisa.com/blogs/is-travel-insurance-must-for-international-travelers
+Redirect 301 https://ztartvisa.com/blogs/japan-visa-for-uae-residence-things-to-do-and-many-more https://startvisa.com/blogs/japan-visa-for-uae-residence-things-to-do-and-many-more
+Redirect 301 https://ztartvisa.com/blogs/uk-adventure-more-than-just-london https://startvisa.com/blogs/uk-adventure-more-than-just-london
+Redirect 301 https://ztartvisa.com/blogs/best-time-to-visit-australia https://startvisa.com/blogs/best-time-to-visit-australia
+Redirect 301 https://ztartvisa.com/blogs/applying-for-an-australian-tourist-visa-from-dubai https://startvisa.com/blogs/applying-for-an-australian-tourist-visa-from-dubai
 
-  // Update form state based on input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+# Other Pages
+Redirect 301 https://ztartvisa.com/career https://startvisa.com/career
+Redirect 301 https://ztartvisa.com/contact https://startvisa.com/contact
+Redirect 301 https://ztartvisa.com/visa-consultant-in-dubai https://startvisa.com/visa-consultant-in-dubai
+Redirect 301 https://ztartvisa.com/privacy-policy https://startvisa.com/privacy-policy
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    const mobileNumberWithZero = "0" + formData.mobileNo;
-    try {
-      const response = await fetch(
-        "https://lead.accorelab.com/api/Lead/Create/LeadAutoCustomer",
-        {
-          method: "POST",
-          headers: {
-            Accept: "*/*",
-            "Content-Type": "application/json",
-            ClientKey: "AcrelbKey", // Replace 'xxxxxxx' with your actual ClientKey
-            ClientValue: "Xjr@5j%787gfounS10", // Replace 'xxxxxxx' with your actual ClientValue
-          },
-          body: JSON.stringify({
-            customerName: formData.customerName,
-            mobileNo: mobileNumberWithZero,
-            countryId: formData.countryId, // Assuming countryId is always 4 as per your example
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        toast.error("Please fill out all fields to proceed")
-        throw new Error("Something went wrong");
-      }
-
-      const data = await response.json(); // Assuming the server responds with JSON
-      toast.dark("Submission Successful")
-      setFormData({
-        customerName: "",
-        mobileNo: "",
-        countryId: "",
-      })
-
-      console.log("Submission Successful", data);
-      // Here you could clear the form or give feedback to the user
-    } catch (error) {
-      console.error("Submission failed", error);
-    }
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setSticky(window.scrollY > 360);
-    };
-
-    const handleOutsideClick = (event) => {
-      // Check if the click is outside the modal
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        // Close the modal
-        setOpen(false);
-      }
-    };
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("click", handleOutsideClick);
-
-    // Remove event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-  const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch(
-          "https://lead.accorelab.com/api/Country/List",
-          {
-            method: "GET",
-            headers: {
-              ClientKey: "AcrelbKey",
-              ClientValue: "Xjr@5j%787gfounS10",
-            },
-          }
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (data.status === 200 && data.result) {
-          setCountries(data.result);
-        } else {
-          setError(data.errorMessage || "Failed to fetch countries");
-        }
-      } catch (error) {
-        console.log(error);
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCountries();
-  }, []);
-
-
-  
-  return (
-    <>
-      <Helmet>
-        <title>Best Visa Services In Dubai UAE, Visa agents In Dubai UAE</title>
-        <meta name="description" content="Best visa services in Dubai UAE. Expert visa agents in Dubai. We simplify tourist and business visa service in Dubai UAE ensuring a smooth and Steady process." />
-      </Helmet>
-      <main className="w-11/12 md:w-11/12 xl:w-9/12 mx-auto h-full">
-        {/* Banner */}
-        <section className="px-2 md:px-0 w-full h-full">
-          <div className="pt-8 lg:pt-24  text-center xs:text-[40px] sm:text-[47px] md:text-5xl lg:text-7xl xl:tracking-wider font-PoppinsBold xl:font-PoppinsExtraBold">
-            <h1 className="leading-none">
-              Visa on Time,
-              <br className="hidden md:block" /> Guaranteed
-            </h1>
-          </div>
-          <p className="text-center text-base pt-2 px-9 md:px-0">
-            Over $3.5 Million Lost Due to Visa Delays: Our Guarantee Ensures
-            On-Time Visas!
-          </p>
-          {/* ---FORM---- */}
-          <form
-            onSubmit={handleSubmit} // Add form submission handler
-            ref={modalRef}
-            className="w-[95%] mx-auto fixed left-0 right-0 top-16 lg:top-20  bg-white z-20  px-3 py-2 flex flex-col gap-y-5 xl:hidden"
-          >
-            <span
-              className={` ${
-                isSticky
-                  ? "flex outline outline-1 outline-gray-300  text-sm items-center justify-center gap-x-3 py-4 rounded-xl font-PoppinsRegular tracking-wide transition-all duration-150"
-                  : "hidden"
-              }`}
-              onClick={() => setOpen(!open)}
-            >
-              {open ? (
-                <span className="flex items-center gap-2">
-                  <p>Close</p>
-                  <IoCloseSharp className="text-xl text-visaclr" />
-                </span>
-              ) : (
-                <span className="flex items-center gap-2">
-                  <p>Start application</p>
-                  <IoSendSharp className="text-xl text-visaclr" />
-                </span>
-              )}
-            </span>
-            {/* pop */}
-            <div
-              className={`${
-                open
-                  ? "flex flex-col gap-3 transition-all duration-100 ease-in"
-                  : "hidden"
-              } `}
-            >
-              <div className="outline outline-1 outline-gray-300 overflow-hidden rounded-2xl">
-                <div className="relative w-full">
-                  <input
-                    className="w-full focus:outline-none py-4 lg:py-2.5 px-4 pl-11 border-b-[1px] lg:border-b-0 lg:border-r-2"
-                    type="text"
-                    placeholder="Name"
-                    name="customerName"
-                    value={formData.customerName}
-                    onChange={handleChange} // Bind change handler
-                    required
-                  />
-                  <AiOutlineUser className="absolute top-[14px] left-3 text-2xl text-gray-700" />
-                </div>
-                <div className="relative w-full">
-                  <input
-                    className="w-full focus:outline-none py-4 lg:py-2.5 px-4 pl-[85px] border-b-[1px] lg:border-b-0 lg:border-r-2 [&::-webkit-inner-spin-button]:appearance-none"
-                    type="tel"
-                    inputMode="numeric"
-                    placeholder="58 550 3940"
-                    pattern="[0-9]{9}"
-                    title="Please enter a 9-digit number" 
-                    name="mobileNo"
-                value={formData.mobileNo}
-                onChange={handleChange} // Bind change handler
-                required
-                  />
-                  <p className="absolute left-9 top-[14.5px] chfont font-medium">+971</p>
-                  <HiOutlineDevicePhoneMobile className="absolute top-4 left-3 text-2xl text-gray-700" />
-                </div>
-                <div className="relative w-full">
-                <select className="w-fit py-4 lg:py-2.5 pl-11 outline-none appearance-none"
-             name="countryId"
-             value={formData.countryId}
-             onChange={handleChange} // Bind change handler
-             required>
-             <option value="">Select a location</option>
-                  {countries.map((country) => (
-                    <option key={country.countryId} value={country.countryId}>
-                      {country.countryName}
-                    </option>
-                  ))}
-             </select>
-                  <IoLocationOutline className="absolute top-[14px] left-3 text-2xl text-gray-700" />
-                </div>
-              </div>
-              <button
-                className="bg-visaclr hover:bg-white border border-visaclr hover:text-visaclr py-4 duration-200 rounded-xl text-white text-base font-PoppinsSemibold"
-                type="submit"
-              >
-                Get started!
-              </button>
-            </div>
-            {/* pop */}
-          </form>
-          {/* ---main FORM---- */}
-          <form
-            className={`${
-              isSticky
-                ? "opacity-0"
-                : "grid grid-cols-1 lg:grid-cols-6 gap-5 mt-10"
-            }  bg-white`}
-            onSubmit={handleSubmit} // Add form submission handler
-          >
-            <div className="lg:col-span-5 flex flex-col md:flex-row outline outline-1 outline-gray-300 overflow-hidden  md:p-2  rounded-xl">
-              <div className="relative w-full">
-                <input
-                  className="w-full focus:outline-none py-4 lg:py-2.5 px-10 md:px-10 lg:px-9 border-b-[1px] md:border-b-0 md:border-r-2"
-                  type="text"
-                  placeholder="Name"
-                  name="customerName"
-                  value={formData.customerName}
-                  onChange={handleChange} // Bind change handler
-                  required
-                />
-                <AiOutlineUser className="absolute left-4 md:left-2 lg:left-1 top-[18px] lg:top-2 text-lg lg:text-2xl text-gray-700" />
-              </div>
-              <div className="relative w-full">
-                <input
-                  className="w-full focus:outline-none  py-4 lg:py-2.5 pl-[5.5rem] md:pl-20 xl:pl-[4.5rem] border-b-[1px] md:border-b-0 md:border-r-2 [&::-webkit-inner-spin-button]:appearance-none"                  type="tel"
-                  inputMode="numeric"
-                  placeholder="58 550 3940"
-                  pattern="[0-9]{9}"
-                  title="Please enter a 9-digit number" 
-                  name="mobileNo"
-                  value={formData.mobileNo}
-                  onChange={handleChange} // Bind change handler
-                  required
-                />
-                 <p className="absolute left-9 md:left-8 xl:left-7 top-[14.5px] lg:top-[8px] 2xl:top-[8px] chfont font-medium">+971</p>
-                <HiOutlineDevicePhoneMobile className="absolute left-4 md:left-2 lg:left-1 top-[19px] lg:top-2 text-lg lg:text-2xl text-gray-700" />
-              </div>
-              <div className="relative w-full">
-                <select
-                  className="w-full focus:outline-none py-4 lg:py-2.5 px-10 md:px-9 lg:px-10 appearance-none "
-                  name="countryId"
-                  value={formData.countryId}
-                  onChange={handleChange} // Bind change handler
-                  required
-                >
-                  <option value="">Select a location</option>
-                  {countries.map((country) => (
-                    <option key={country.countryId} value={country.countryId}>
-                      {country.countryName}
-                    </option>
-                  ))}
-                </select>
-                <IoLocationOutline className="absolute left-4 md:left-2 lg:left-2 top-[18px] lg:top-2 text-lg lg:text-2xl text-gray-700 pointer-events-none" />
-              </div>
-            </div>
-            <button
-              className="bg-visaclr hover:bg-white border border-visaclr hover:text-visaclr py-4 lg:py-2.5 xl:px-4 duration-200 rounded-xl text-white text-base font-PoppinsSemibold"
-              type="submit"
-            >
-              Get started!
-            </button>
-          </form>
-        </section>
-
-        <section className="px-1 md:px-0 w-full h-full">
-          <div className="flex flex-col items-center gap-2 pt-10 pb-5">
-            <span className="flex items-center text-3xl text-yellow-400">
-              <IoMdStar />
-              <IoMdStar />
-              <IoMdStar />
-              <IoMdStar />
-              <IoMdStar />
-            </span>
-            <p className="text-center text-sm lg:text-base">
-              Ztartvisa boasts a perfect 5-star Google review rating, showcasing
-              our commitment to timely and reliable visa services.
-            </p>
-            {/* <img loading='lazy' className='h-10 w-36' src={Trustpilotgoogle} alt="image" />
-          <p className='text-center text-base'>Based on 1,393+ reviews Trustpilot & Google</p> */}
-            <span className="flex gap-5 items-center text-2xl text-yellow-400">
-              <FcGoogle />
-            </span>
-          </div>
-          {/* <div className='flex flex-col gap-3 items-center bg-[#f5f5f5] rounded-[3rem] my-10 px-5 py-14 text-center'>
-          <img className='pb-10 w-[709px] h-full object-cover' src={PriceComp} alt="priceimage" />
-          <h2 className='text-2xl lg:text-4xl font-PoppinsBold'>Expert Visa Services at Your Fingertips</h2>
-          <p className='text-sm lg:text-base'>Choose our experts for a smooth visa process. Get personalized help, avoid mistakes, and increase your chances of approval.</p>
-        </div> */}
-          <div className="px-1 md:px-0">
-            <VisaImageCarousal />
-          </div>
-        </section>
-
-        <section>
-          <Testimonial />
-        </section>
-
-        {/* carousal */}
-        <section className="py-20 lg:py-24">
-          <TravelCarousal />
-        </section>
-
-        <section className="flex flex-col gap-10">
-          <h1 className="text-2xl lg:text-4xl font-PoppinsExtraBold text-center">
-            UAE's Favorite,
-            <br className="hidden lg:block" /> Visa Community
-          </h1>
-          <img
-            loading="lazy"
-            className="rounded-2xl h-52 lg:h-[25rem] w-full object-cover"
-            src={ztartoffice}
-            alt="image"
-          />
-          <div className="bg-[#F2EFEA] px-10 lg:px-0 lg:py-10 grid grid-cols-1 lg:grid-cols-3 rounded-2xl">
-            <div className="flex flex-col gap-3 border-b lg:border-b-0 lg:border-r border-gray-300 py-10 lg:py-0 lg:px-10">
-              <img
-                className="h-14 w-14 object-cover mb-2"
-                src={Buddy}
-                alt="logo"
-                loading="lazy"
-              />
-              <h3 className="text-lg lg:text-xl font-PoppinsMedium">
-                Your Visa Buddy
-              </h3>
-              <p className="text-sm lg:text-base">
-                Specialized visa support you can count on.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 border-b lg:border-b-0 lg:border-r border-gray-300 py-10 lg:py-0 lg:px-10">
-              <img
-                className="h-14 w-14 object-cover mb-2"
-                src={Savemoney}
-                alt="logo"
-                loading="lazy"
-              />
-              <h3 className="text-lg lg:text-xl font-PoppinsMedium">
-                Save Your Money
-              </h3>
-              <p className="text-sm lg:text-base">
-                Expert advice to avoid unnecessary expenses.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 py-10 lg:py-0 lg:px-10">
-              <img
-                className="h-14 w-14 object-cover mb-2"
-                src={Solutions}
-                alt="logo"
-                loading="lazy"
-              />
-              <h3 className="text-lg lg:text-xl font-PoppinsMedium">
-                Get Visa Solutions
-              </h3>
-              <p className="text-sm lg:text-base">
-                Strong government connections and deep understanding of global
-                visa regulations.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* <section className='flex flex-col gap-2 py-20 lg:py-32'>
-          <h1 className='text-2xl lg:text-4xl font-PoppinsBold text-center lg:text-left'>Check-in to a better deal</h1>
-          <p className='text-sm lg:text-base'>Access beautiful hotels across the world with our exclusive discounts</p>
-          <BetterDeal/>
-          <a className='mt-10 w-full lg:w-fit mx-auto text-center md:w-fit px-10 py-3.5 font-PoppinsMedium rounded-full border border-visaclr duration-200 bg-visaclr text-white hover:bg-white hover:text-visaclr' href="#">Explore more</a>
-      </section> */}
-
-        {/* <section className='flex flex-col gap-3 pb-20'>
-          <h1 className='text-2xl lg:text-4xl font-PoppinsBold text-center'>Caring Guaranteed</h1>
-          <p className='text-sm lg:text-base text-center'>With ztartvisa, travel with confidence, clarity, and care. Our triple guarantee covers every aspect of your trip:</p>
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
-            <div className=' border border-gray-300 rounded-2xl p-5 flex flex-col justify-start gap-3'>
-              <img className=' h-24 w-16 object-fill' src={diamondsvg} alt="svg" />
-              <h4 className='text-lg font-PoppinsSemibold leading-none'>Book with confidence guarantee</h4>
-              <p className='text-sm lg:text-base tracking-wider'>Choose your room, and rest assured it's yours – no surprises. All promised amenities provided, with quick fixes for any issues.</p>
-              <Link className='underline capitalize font-PoppinsSemibold'>learn more</Link>
-            </div>
-            <div className=' border border-gray-300 rounded-2xl p-5 flex flex-col justify-start gap-3'>
-              <img className=' h-24 w-16 object-fill' src={sheildsvg} alt="svg" />
-              <h4 className='text-lg font-PoppinsSemibold leading-none'>Zero hidden fees guarantee</h4>
-              <p className='text-sm lg:text-base tracking-wider'>Because we hate those pesky hidden fees too. Transparent pricing, honest details – that's how we roll. In the rare case any unexpected.</p>
-              <Link className='underline capitalize font-PoppinsSemibold'>learn more</Link>
-            </div>
-            <div className=' border border-gray-300 rounded-2xl p-5 flex flex-col justify-start gap-3'>
-              <img className=' h-24 w-16 object-fill' src={heartsvg} alt="svg" />
-              <h4 className='text-lg font-PoppinsSemibold leading-none'>Traveler Care guarantee</h4>
-              <p className='text-sm lg:text-base tracking-wider'>Our Traveler Care team, accessible 24/7 via email, call, or WhatsApp, offers dedicated support with real-time, thoughtful solutions.</p>
-              <Link className='underline capitalize font-PoppinsSemibold'>learn more</Link>
-            </div>
-          </div>
-      </section> */}
-
-        <section className="flex flex-col gap-3 py-20">
-          <h2 className="text-xl lg:text-3xl font-PoppinsExtraBold text-visaclr text-center capitalize">
-            Our commitment:
-          </h2>
-          <h1 className="text-2xl lg:text-4xl font-PoppinsExtraBold text-center capitalize">
-            The best visa consultants in UAE
-          </h1>
-          {/* <img loading='lazy' className='rounded-2xl h-52 lg:h-[24rem] w-full object-cover mt-3' src={Grp4} alt="image" /> */}
-          {/* // add mt-5 when add image */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
-            <div className="flex flex-col gap-3">
-              <span className="flex items-center gap-3">
-                <TiTick className="text-visaclr text-sm bg-gray-200 rounded-2xl" />
-                <h4 className="text-lg lg:text-lg font-PoppinsSemibold">
-                  Fast
-                </h4>
-              </span>
-              <p className="pl-6 text-base lg:text-base">
-                24/7 Support: Reach us anytime on Instagram, Messenger,
-                WhatsApp, Email, or call us.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="flex items-center gap-3">
-                <TiTick className="text-visaclr text-sm bg-gray-200 rounded-2xl" />
-                <h4 className="text-lg lg:text-lg font-PoppinsSemibold">
-                  Convenient
-                </h4>
-              </span>
-              <p className="pl-6 text-base lg:text-base">
-                Expert Guidance: Personal visa officer assigned until your visa
-                is processed.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="flex items-center gap-3">
-                <TiTick className="text-visaclr text-sm bg-gray-200 rounded-2xl" />
-                <h4 className="text-lg lg:text-lg font-PoppinsSemibold">
-                  Personalized
-                </h4>
-              </span>
-              <p className="pl-6 text-base lg:text-base">
-                Personalized Service: Comprehensive help starting from scratch.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="flex flex-col lg:flex-row gap-10  lg:py-16">
-          <div className="flex-1 flex items-center text-center lg:text-left lg:items-start flex-col gap-7">
-            <img
-              className="h-12 w-12 md:h-16  md:w-16 object-cover"
-              src={insatsvg}
-              alt="insta"
-              loading="lazy"
-            />
-            <h1 className="text-2xl lg:text-4xl font-PoppinsExtraBold capitalize">
-              Inspire your next adventure
-            </h1>
-            <img
-              className="block lg:hidden rounded-xl w-full  object-cover h-full"
-              loading="lazy"
-              src={InsatProf}
-              alt="insta"
-            />
-            <p className="text-sm lg:text-base">
-              Follow @Ztartvisa for travel tips, advice, and exclusive visa
-              solutions.
-            </p>
-            <a
-              className="w-full text-base text-center md:w-fit px-10 py-3.5 font-PoppinsMedium rounded-full border border-visaclr duration-200 hover:bg-visaclr hover:text-white text-visaclr"
-              href="https://www.instagram.com/ztartvisa?igsh=aGN4anc0bW9obmh5"
-              target="_blank"
-            >
-              Follow us on Instagram
-            </a>
-          </div>
-          <div className="flex-1">
-            <img
-              className="hidden lg:block rounded-xl w-full  object-cover h-full"
-              loading="lazy"
-              src={InsatProf}
-              alt="insta"
-            />
-          </div>
-        </section>
-
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:pt-16">
-          <div className="flex-1 ">
-            <img
-              className="hidden lg:block rounded-xl w-full  object-cover h-full"
-              loading="lazy"
-              src={ztartnews}
-              alt="insta"
-            />
-          </div>
-          <div className="flex-1 flex flex-col gap-7">
-            <h1 className="text-2xl lg:text-4xl text-center lg:text-left font-PoppinsExtraBold">
-              Join Our Visa Analysis Camp
-            </h1>
-            <img
-              className="block lg:hidden rounded-xl w-full  object-cover h-full"
-              loading="lazy"
-              src={ztartnews}
-              alt="insta"
-            />
-            <p className="text-sm lg:text-base">
-              Learn the common reasons for visa denials and improve your
-              application. Our camp offers insights and strategies to enhance
-              your chances of approval.
-            </p>
-            <a
-              className="w-full text-base text-center md:w-fit px-10 py-3.5 font-PoppinsMedium rounded-full border border-visaclr duration-200 hover:bg-visaclr hover:text-white text-visaclr"
-              href="https://www.khaleejtimes.com/kt-network/ztartvisa-hosts-visa-rejection-analysis-camp-in-dubai-for-visa-applicants"
-              target="_blank"
-            >
-              Learn more
-            </a>
-          </div>
-        </section>
-
-        <section className="flex flex-col-reverse lg:flex-row  overflow-hidden pt-24 pb-20">
-          <div className="rounded-b-2xl lg:rounded-b-none lg:rounded-l-3xl flex-1 bg-[#FEFCE8] flex flex-col justify-center p-5 md:p-10 gap-7">
-            <h1 className="text-2xl lg:text-4xl capitalize font-PoppinsExtraBold">
-              Increase visa chances,
-              <br /> not your stress
-            </h1>
-            <p className="text-sm lg:text-base">
-              Get a free consultation and understand the visa application
-              process before you apply.
-            </p>
-            <a
-              className="w-full text-base text-center md:w-fit px-10 py-3.5 font-PoppinsMedium rounded-full bg-transparent border border-visaclr duration-200 hover:bg-visaclr hover:text-white text-visaclr"
-              href="/contact"
-            >
-              Start with an expert
-            </a>
-          </div>
-          <div className="flex-1">
-            <img
-              className="w-full md:h-96 lg:h-full object-cover rounded-t-2xl lg:rounded-t-none lg:rounded-tr-3xl lg:rounded-br-3xl"
-              src={relaxImg2}
-              alt="scene"
-              loading="lazy"
-            />
-          </div>
-        </section>
-
-        {/* Go to top */}
-
-        <div className="w-fit mx-auto pb-5 md:pb-0">
-          <button
-            className="w-fit text-base font-PoppinsMedium px-10 lg:px-8 py-2.5 lg:py-3 flex items-center gap-3 border border-visaclr rounded-full text-visaclr hover:bg-visaclr hover:text-white duration-200"
-            onClick={scrollToTop}
-          >
-            <FaArrowUp />
-            <p>Back to top</p>
-          </button>
-        </div>
-      </main>
-
-      {/* <Demo/> */}
-    </>
-  );
-}
-
-export default Homepage;

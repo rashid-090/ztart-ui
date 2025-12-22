@@ -69,11 +69,11 @@ const Whyztart = () => {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
         <div className="md:col-span-3 flex flex-col justify-center items-start gap-5">
           <h4 className="text-2xl xl:text-5xl font-PoppinsMedium uppercase transition-all duration-700 ease-in-out opacity-100">
-            Why ZtartVisa is <span className="text-visaclr">Your<br /> Trusted Choice</span> for<br /> On-Time Visa Approval
+            Why startVisa is <span className="text-visaclr">Your<br /> Trusted Choice</span> for<br /> On-Time Visa Approval
           </h4>
           <p className="text-xs xl:w-[70%] xl:text-justify md:text-base text-opacity-100 transition-all duration-700 ease-in-out opacity-100">
-            Ztartvisa is your trusted choice for on-time Visa approval. We provide the best Visa services in Dubai helping you get your Visa on time with no hassle. Whether it’s a Tourist or Visit Visa, we’ve got you covered.
-          </p>
+Startvisa is your trusted choice for on-time Visa approval. We provide the best Visa services in Dubai helping you get your
+Visa on time with no hassle. Whether it’s a Tourist or Visit Visa, we’ve got you covered.</p>
           <Link to={'/contact'}><button className="bg-visaclr text-xs md:text-sm font-PoppinsMedium uppercase text-white px-5 py-3 rounded-full transition-all duration-700 ease-in-out opacity-100">START YOUR VISA PROCESS</button></Link>
         </div>
         <div className="ml-10 md:col-span-2 aspect-square md:aspect-auto xl:aspect-square rounded-[2rem] shadow-xl relative">

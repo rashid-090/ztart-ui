@@ -22,7 +22,7 @@ const AdminLayout = () => {
       >
         <div className="h-full overflow-y-auto">
           <div className="flex items-center justify-between p-4 lg:hidden">
-            <h2 className="text-2xl font-bold text-[#00a39a]">Ztart</h2>
+            <h2 className="text-2xl font-bold text-[#00a39a]">Start</h2>
             <button
               onClick={() => setSidebarOpen(false)}
               className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"

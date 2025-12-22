@@ -57,14 +57,14 @@ const VisaGrid = () => {
     <>
       <Helmet>
         <title>Best Visa Agency in Dubai, Schengen Visa Assistance in Dubai</title>
-        <link rel="canonical" href="https://ztartvisa.com/visa" />
+        <link rel="canonical" href="https://startvisa.com/visa" />
         <meta name="keywords" content="Visa Service in Dubai, Best Visa service in Dubai, Visa Services in Dubai, Best Visa Services in Dubai, Best Visa Service in UAE, Visa Agency in Dubai, Best Visa agency in Dubai, Visa Agents in Dubai, Best Visa Agents in Dubai" />
         <meta
           name="description"
-          content=" Ztartvisa, the Best Visa Agency in Dubai, offers expert Schengen Visa Assistance and visa support for the UK, US, Canada, and Turkey. Apply now"
+          content="Startvisa, the Best Visa Agency in Dubai, offers expert Schengen Visa Assistance and visa support for the UK, US, Canada, and Turkey. Apply now"
         />
         <meta property="og:title" content="Visa Agency in Dubai | Best Visa Agents in Dubai, UAE" />
-        <meta property="og:description" content="We are leading Visa Agency in Dubai, offering expert guidance and support for all visa types with our team of Best Visa Agents in Dubai UAE" />
+        <meta property="og:description" content="Startvisa, the Best Visa Agency in Dubai, offers expert Schengen Visa Assistance and visa support for the UK, US, Canada, and Turkey. Apply now" />
       </Helmet>
       <div className=" mx-auto  py-8 ">
         <h1 className=" text-2xl md:text-6xl font-PoppinsExtraBold text-center px-3 md:px-0  mt-20 text-visaclr">

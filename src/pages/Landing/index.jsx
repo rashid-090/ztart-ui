@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import emailjs from "@emailjs/browser";
+
 import {
   InsatProf,
   insatsvg,
@@ -56,9 +58,9 @@ const LandFAQ = [
         Dubai.`,
       },
       {
-        question: `What makes ZTartVisas' visa consultant in Dubai different from others?`,
+        question: `What makes STartVisas' visa consultant in Dubai different from others?`,
         answer: `Years of expertise and an excellent reputation in helping customers secure visas are
-        attributes of our team of knowledgeable visa advisors at ZTartVisas, makes us a trusted and
+        attributes of our team of knowledgeable visa advisors at STartVisas, makes us a trusted and
         reliable visa consultant in Dubai.`,
       },
       {
@@ -86,71 +88,63 @@ const LandFAQ = [
 
 ]
 
+const countries = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
+  "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+  "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic (Czechia)", "Democratic Republic of the Congo",
+  "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini (Swaziland)", "Ethiopia",
+  "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
+  "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan",
+  "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (Burma)", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda",
+  "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+  "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu",
+  "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+];
+
 function LandingPage() {
   const [open, setOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState("");
+
   const modalRef = useRef(null);
   open
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "");
 
-  const [formData, setFormData] = useState({
-    customerName: "",
-    mobileNo: "",
-    countryId: "",
-  });
-  
+ 
 
-  // Update form state based on input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+
 
   // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    const mobileNumberWithZero = "0" + formData.mobileNo;
-    try {
-      const response = await fetch(
-        "https://lead.accorelab.com/api/Lead/Create/LeadAutoCustomer",
-        {
-          method: "POST",
-          headers: {
-            Accept: "*/*",
-            "Content-Type": "application/json",
-            ClientKey: "AcrelbKey", // Replace 'xxxxxxx' with your actual ClientKey
-            ClientValue: "Xjr@5j%787gfounS10", // Replace 'xxxxxxx' with your actual ClientValue
-          },
-          body: JSON.stringify({
-            customerName: formData.customerName,
-            mobileNo: mobileNumberWithZero,
-            countryId: formData.countryId, // Assuming countryId is always 4 as per your example
-          }),
-        }
-      );
+const handleSubmit = (e) => {
+    e.preventDefault();
 
-      if (!response.ok) {
-        toast.error("Please fill out all fields to proceed")
-        throw new Error("Something went wrong");
-      }
+    // Your EmailJS service ID, template ID, and Public Key
+     const serviceId = "service_z7xu4jk";
+    const templateId = "template_3iadmge";
+    const publicKey = "F2kfLKAaSE8fINfl7";
 
-      const data = await response.json(); // Assuming the server responds with JSON
-      toast.dark("Submission Successful")
-      setFormData({
-        customerName: "",
-        mobileNo: "",
-        countryId: "",
+    // Create a new object that contains dynamic template params
+    const templateParams = {
+      user_name: name,
+      user_mobile: phone,
+      user_cnty: country,
+    };
+
+    // Send the email using EmailJS
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        toast.success("Message sent successfully", response);
+        setName("");
+        setPhone("");
+        setCountry("");
       })
-
-      console.log("Submission Successful", data);
-      // Here you could clear the form or give feedback to the user
-    } catch (error) {
-      console.error("Submission failed", error);
-    }
+      .catch((error) => {
+        toast.error("Error sending email", error);
+      });
   };
 
   useEffect(() => {
@@ -183,43 +177,7 @@ function LandingPage() {
       behavior: "smooth",
     });
   };
-  const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch(
-          "https://lead.accorelab.com/api/Country/List",
-          {
-            method: "GET",
-            headers: {
-              ClientKey: "AcrelbKey",
-              ClientValue: "Xjr@5j%787gfounS10",
-            },
-          }
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (data.status === 200 && data.result) {
-          setCountries(data.result);
-        } else {
-          setError(data.errorMessage || "Failed to fetch countries");
-        }
-      } catch (error) {
-        console.log(error);
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCountries();
-  }, []);
+  
 
 
   const FAQItem = ({ question, answer }) => {
@@ -261,9 +219,9 @@ function LandingPage() {
   return (
     <>
       <Helmet>
-      <title>Ztartvisa Your Expert Visa Consultant in Dubai
+      <title>Startvisa Your Expert Visa Consultant in Dubai
       </title>
-        <link rel="canonical" href={`https://ztartvisa.com/visa-consultant-in-dubai`} />
+        <link rel="canonical" href={`https://startvisa.com/visa-consultant-in-dubai`} />
         <meta name="keywords" content="Visa Consultant in Dubai, Best Visa Consultant in Dubai, Visa Consultants in Dubai, Best, Visa Consultants in Dubai, Visa Consultancy in Dubai, Best Visa Consultancy in Dubai, Schengen Visa Consultant in Dubai, Schengen Visa Consultants in Dubai, Schengen Visa Consultancy in Dubai, Best Schengen Visa Consultant in Dubai, Best Schengen Visa Consultants in Dubai, Best Schengen Visa Consultancy in Dubai"/>
         <meta name="description" content="We are the top visa consultant in Dubai, UAE, offer end-to-end visa services, handling all documentation for Tourist, Visit, Business & Schengen Visas etc" />
         <meta property="og:title" content="Visa Consultant in Dubai | Schengen Visa Consultancy in Dubai"/>
@@ -274,8 +232,8 @@ function LandingPage() {
         {/* Banner */}
         <section className="w-full h-full pt-5 xl:py-20 grid grid-cols-1 md:grid-cols-5 gap-5 xl:gap-10">
            <div className="md:col-span-3 h-full flex flex-col justify-center gap-y-3">
-                <h1 className="text-3xl text-center md:text-left lg:text-5xl font-PoppinsExtraBold">Ztartvisa<br className="hidden lg:block" />  Your Expert Visa Consultant in Dubai</h1>
-                <p className="font-PoppinsRegular text-center xl:text-justify">Ztartvisa, we are the top visa consultant in Dubai, offer end-to-end visa services in dubai, handling all documentation for various visas, including business, investor, and tourist visas, ensuring clients make the right choice.</p>
+                <h1 className="text-3xl text-center md:text-left lg:text-5xl font-PoppinsExtraBold">Startvisa<br className="hidden lg:block" />  Your Expert Visa Consultant in Dubai</h1>
+                <p className="font-PoppinsRegular text-center xl:text-justify">Startvisa, we are the top visa consultant in Dubai, offer end-to-end visa services in dubai, handling all documentation for various visas, including business, investor, and tourist visas, ensuring clients make the right choice.</p>
                 <Link to={'/'}
                   className=" text-base text-center mx-auto md:mx-0 w-fit px-10 py-3.5 font-PoppinsMedium rounded-full border border-visaclr duration-200 hover:bg-visaclr hover:text-white text-visaclr"
                 >
@@ -283,68 +241,27 @@ function LandingPage() {
                 </Link>
            </div>
            <div className="md:col-span-2">
-           <form
-            className={` flex flex-col gap-3 border p-5 shadow-xl rounded-3xl`}
-            onSubmit={handleSubmit} // Add form submission handler
-          >
-         
-              <div className="relative w-full ">
-                <input
-                  className="w-full focus:outline-none py-4 lg:py-2.5 px-10 md:px-10 lg:px-9 border rounded-lg "
-                  type="text"
-                  placeholder="Name"
-                  name="customerName"
-                  value={formData.customerName}
-                  onChange={handleChange} // Bind change handler
-                  required
-                />
-                <AiOutlineUser className="absolute left-4 md:left-2 lg:left-1 top-[18px] lg:top-3 text-lg lg:text-2xl text-gray-700" />
-              </div>
-              <div className="relative w-full ">
-                <input
-                  className="w-full focus:outline-none  py-4 lg:py-2.5 pl-[5.5rem] md:pl-20 xl:pl-[4.5rem] border rounded-lg [&::-webkit-inner-spin-button]:appearance-none"                  type="tel"
-                  inputMode="numeric"
-                  placeholder="58 550 3940"
-                  pattern="[0-9]{9}"
-                  title="Please enter a 9-digit number" 
-                  name="mobileNo"
-                  value={formData.mobileNo}
-                  onChange={handleChange} // Bind change handler
-                  required
-                />
-                 <p className="absolute left-9 md:left-8 xl:left-7 top-[14.5px] lg:top-[10px] chfont font-medium">+971</p>
-                <HiOutlineDevicePhoneMobile className="absolute left-4 md:left-2 lg:left-1 top-[19px] lg:top-3 text-lg lg:text-2xl text-gray-700" />
-              </div>
-              <div className="relative w-full ">
-              <label htmlFor="country-select" className="sr-only">
-                    Select your location
-                  </label>
-                <select
-                 id="country-select"
-                    aria-required="true"
-                  className="w-full focus:outline-none py-4 lg:py-2.5 px-10 md:px-9 lg:px-10 appearance-none border rounded-lg"
-                  name="countryId"
-                  value={formData.countryId}
-                  onChange={handleChange} // Bind change handler
-                  required
-                >
-                  <option value="">Select a location</option>
-                  {countries.map((country) => (
-                    <option key={country.countryId} value={country.countryId}>
-                      {country.countryName}
-                    </option>
-                  ))}
-                </select>
-                <IoLocationOutline className="absolute left-4 md:left-2 lg:left-2 top-[18px] lg:top-3 text-lg lg:text-2xl text-gray-700 pointer-events-none" />
-              </div>
-    
-            <button
-              className="bg-visaclr hover:bg-white border border-visaclr hover:text-visaclr py-4 lg:py-2.5 xl:px-4 duration-200 rounded-xl text-white text-base font-PoppinsSemibold"
-              type="submit"
-            >
-              Get started!
-            </button>
-          </form>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-y-3 border p-5 rounded-xl">
+                               <div className="relative">
+                                 <input className="border border-gray-300 p-2 w-full pl-8 rounded-sm outline-none" type="text" placeholder="Name" name="user_name" value={name} onChange={(e) => setName(e.target.value)} required />
+                                 <AiOutlineUser className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                               </div>
+                               <div className="relative">
+                                 <input className="border border-gray-300 p-2 pl-[75px] w-full rounded-sm outline-none" type="tel" inputMode="numeric" placeholder="58 550 3940" pattern="[0-9]{9}" title="Please enter a 9-digit number" name="user_mobile" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                                 <p className="absolute top-[7px] left-8 chfont font-medium">+971</p>
+                                 <HiOutlineDevicePhoneMobile className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                               </div>
+                               <div className="relative">
+                                 <select className="h-10 w-full pl-8 text-base outline-none border appearance-none" name="user_cnty" value={country} onChange={(e) => setCountry(e.target.value)} required>
+                                   <option value="">Select a location</option>
+                                 {countries.map((c, index) => (
+  <option key={index} value={c}>{c}</option>
+))}
+                                 </select>
+                                 <IoLocationOutline className="absolute top-2.5 left-2 text-lg text-gray-700" />
+                               </div>
+                               <button className="text-center w-full bg-visaclr h-10 text-white rounded-md mt-2" type="submit">Submit</button>
+                             </form>
            </div>
         </section>
 
@@ -544,7 +461,7 @@ function LandingPage() {
             Current Visa Trends and 
               <br /> Requirements in Dubai
             </h1>
-            <p className=" font-PoppinsRegular">As a global hub, Dubai's visa requirements are evolving, particularly for work permits, business visas, and travel restrictions. At Ztartvisa, we provide expert guidance throughout the visa application process, ensuring smooth and timely approvals.</p>
+            <p className=" font-PoppinsRegular">As a global hub, Dubai's visa requirements are evolving, particularly for work permits, business visas, and travel restrictions. At Startvisa, we provide expert guidance throughout the visa application process, ensuring smooth and timely approvals.</p>
             <p className=" font-PoppinsRegular">Post-COVID regulations require health declarations, vaccination proof, or negative PCR tests for visa applications. We ensure compliance with these guidelines and assist with business visas, including new categories like the Golden Visa and Freelancer Visa, for professionals and investors. Our services also cover family and dependent visas for expatriates and updated work visas, guiding professionals through the entire application process.</p>
             <a
               className="w-full text-base text-center md:w-fit px-10 py-3.5 font-PoppinsMedium rounded-full bg-transparent border border-visaclr duration-200 hover:bg-visaclr hover:text-white text-visaclr"

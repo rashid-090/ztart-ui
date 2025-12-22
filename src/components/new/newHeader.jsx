@@ -114,7 +114,7 @@ const NewHeader = () => {
              
               <div>
                 <h2 className="text-lg font-PoppinsSemibold">
-                  About ztartvisa
+                  About startvisa
                 </h2>
                 <ul className="text-base pt-4 flex flex-col gap-2">
                   <li>
@@ -155,7 +155,7 @@ const NewHeader = () => {
                 <h2 className="text-lg font-PoppinsSemibold">Contact Us</h2>
                 <ul className="text-base pt-4 flex flex-col gap-2">
                   <li>
-                    <a href="mailto:hello@ztartvisa.com">hello@ztartvisa.com</a>
+                    <a href="mailto:hello@startvisa.com">hello@startvisa.com</a>
                   </li>
                   <li>
               <a href="tel:971585271991">+971 58 527 1991</a>

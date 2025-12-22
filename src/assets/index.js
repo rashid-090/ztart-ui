@@ -1,5 +1,5 @@
-import VisaLogo from '../assets/images/logo/ztartnewlgo.png';
-import VisaLogoOnly from '../assets/images/logo/ztartnewmeta.png';
+import VisaLogo from '../assets/images/logo/ztartnewlgo2.png';
+import VisaLogoOnly from '../assets/images/logo//ztartnewmeta2.png';
 import HotelLogo from '../assets/images/logo/hotellogo.svg';
 import Trustpilot from '../assets/images/logo/trustpilot.svg';
 import Trustpilotstar from '../assets/images/logo/trustpilotstars.svg';

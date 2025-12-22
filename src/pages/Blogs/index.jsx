@@ -59,11 +59,11 @@ const Blog = () => {
         <title>Visa Updates & Blogs by the Best Visa Consultancy in Dubai</title>
         <link
           rel="canonical"
-          href={`https://ztartvisa.com/blogs`}
+          href={`https://startvisa.com/blogs`}
         />
         <meta
           name="description"
-          content="Stay updated with Ztartvisa, your trusted visa consultancy in Dubai, for the latest visa updates, travel policies, visa-free countries, and expert travel tips."
+          content="Stay updated with Startvisa, your trusted visa consultancy in Dubai, for the latest visa updates, travel policies, visa-free countries, and expert travel tips."
         />
       </Helmet>
 
