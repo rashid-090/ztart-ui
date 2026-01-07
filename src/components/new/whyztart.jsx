@@ -80,7 +80,7 @@ Visa on time with no hassle. Whether it’s a Tourist or Visit Visa, we’ve got
           <img
             className="absolute w-full h-full object-cover rounded-[2rem] transition-all duration-700 ease-in-out opacity-100"
             src={currentItem.image}  // Original image (1500x1500)
-            alt=""
+            alt="Japan visa from Dubai- Startvisa"
             // ↓ Add these ↓
             width="338"
             height="338"

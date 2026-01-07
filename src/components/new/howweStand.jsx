@@ -27,10 +27,10 @@ const HowweStand = () => {
   }, []);
 
   const steps = [
-    { icon: stand1, title: "Free visa consultation" },
-    { icon: stand2, title: "Application preparation" },
-    { icon: stand3, title: "Doorstep document delivery" },
-    { icon: stand4, title: "Personalized support" },
+    { icon: stand1, title: "Free visa consultation",alt:"visa consultation services icon- Startvisa" },
+    { icon: stand2, title: "Application preparation",alt:"visa application processing- Startvisa" },
+    { icon: stand3, title: "Doorstep document delivery",alt:"visa application form submission- Startvisa" },
+    { icon: stand4, title: "Personalized support",alt:"visa assistance services- Startvisa" },
   ];
 
   return (
@@ -98,7 +98,7 @@ const HowweStand = () => {
               transitionDelay: `${index * 400 + 200}ms`,
             }}
           >
-            <img className="h-8 w-8 xl:w-12 xl:h-12 object-contain" src={step.icon} alt="" />
+            <img className="h-8 w-8 xl:w-12 xl:h-12 object-contain" src={step.icon} alt={step.alt} />
             <h4 className="text-[8px] md:text-sm font-PoppinsMedium text-center w-[100%] 2xl:w-[55%] uppercase">
               {step.title}
             </h4>

@@ -32,7 +32,7 @@ const FastReliable = () => {
       <img
         className="absolute h-full w-full left-0 top-0 object-cover object-top"
         src={ban6}
-        alt=""
+        alt="Turkey visa services- Startvisa"
         width="961"
         height="396"
         loading="lazy"

@@ -209,7 +209,7 @@ everything, so you can focus on what matters.
         <img
           className="absolute w-full h-full object-cover object-center"
           src={ban5}  // Original image (1494x1091)
-          alt=""
+          alt="canada visa from dubai- Startvisa"
           // ↓ Add these ↓
           width="506"
           height="276"
@@ -272,7 +272,7 @@ easily. Apply now for a stress-free experience.
         <img
           className="absolute object-center w-full h-full object-cover"
           src={baan22}
-          alt=""
+          alt="Spain Visa from Dubai - Startvisa"
           // Add these attributes:
           width="902"
           height="424"
