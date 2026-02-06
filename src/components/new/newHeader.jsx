@@ -66,7 +66,7 @@ const NewHeader = () => {
         <img
           className="h-7 xl:h-10 w-28 xl:w-40 object-contain"
           src={VisaLogo}
-          alt=""
+          alt="Logo"
         />
         <ul className="hidden -ml-60  xl:flex gap-5 items-center">
           {myHeader?.map((dt, i) => (

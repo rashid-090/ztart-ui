@@ -1,64 +1,73 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Ensure CSS is imported
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
-import {
-  FaInstagram,
-  FaLinkedin,
-  FaLocationDot,
-  FaThreads,
-  FaYoutube,
-} from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
 import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false); // New loading state
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Your EmailJS service ID, template ID, and Public Key
-    const serviceId = "service_z7xu4jk";
+    // prevent double submission
+    if (isSending) return;
+
+    setIsSending(true);
+
+    // Ideally, store these in a .env file (e.g., process.env.REACT_APP_SERVICE_ID)
+  const serviceId = "service_wj3pobe";
     const templateId = "template_lm5nfq2";
     const publicKey = "F2kfLKAaSE8fINfl7";
 
-    // Create a new object that contains dynamic template params
     const templateParams = {
       user_name: name,
       user_mobile: phone,
       user_msg: message,
     };
 
-    // Send the email using EmailJS
     emailjs
       .send(serviceId, templateId, templateParams, publicKey)
       .then((response) => {
-        toast.success("Message sent successfully", response);
+        console.log("SUCCESS!", response.status, response.text);
+        toast.success("Message sent successfully!");
         setName("");
         setPhone("");
         setMessage("");
       })
       .catch((error) => {
-        toast.error("Error sending email", error);
+        console.error("FAILED...", error);
+        toast.error("Error sending email. Please try again.");
+      })
+      .finally(() => {
+        setIsSending(false); // Reset loading state regardless of success/fail
       });
   };
+
   return (
     <>
-    <Helmet>
-        <title>Contact us for best visa service | startvisa Dubai, UAE
-        </title>
-        <link
-          rel="canonical"
-          href={`https://startvisa.com/contact`}
+      <Helmet>
+        <title>Contact us for best visa service | startvisa Dubai, UAE</title>
+        <link rel="canonical" href={`https://startvisa.com/contact`} />
+        <meta
+          name="description"
+          content="Need help with your Dubai visa process? Startvisa offers expert guidance and support. Contact us today for a seamless visa experience."
         />
-        <meta name="description" content="Need help with your Dubai visa process? Startvisa offers expert guidance and support. Contact us today for a seamless visa experience." />
       </Helmet>
+
+      {/* Required for toast notifications to appear */}
+      <ToastContainer position="top-right" autoClose={5000} />
+
       <div className="w-11/12 md:w-11/12 xl:w-9/12 mx-auto h-full ">
         <div className="my-10 rounded-3xl overflow-hidden bg-[#f6f6f6] border shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-5 rounded-3xl overflow-hidden">
+            {/* Contact Info Side */}
             <div className="md:col-span-2 flex flex-col justify-center gap-10 rounded-3xl overflow-hidden bg-visaclr text-white p-6 py-10 xl:py-20">
               <div className="flex flex-col gap-3">
                 <h1 className="text-4xl 2xl:text-6xl font-PoppinsSemibold">
@@ -69,7 +78,7 @@ const Contact = () => {
               <div className="flex flex-col gap-3">
                 <span className="flex gap-5">
                   <FiPhoneCall className="text-xl" />
-              <a href="tel:971585271991">+971 58 527 1991</a>
+                  <a href="tel:971585271991">+971 58 527 1991</a>
                 </span>
                 <span className="flex gap-5">
                   <MdOutlineMail className="text-xl" />
@@ -84,7 +93,8 @@ const Contact = () => {
                 </span>
               </div>
             </div>
-            {/*  */}
+
+            {/* Form Side */}
             <form
               onSubmit={handleSubmit}
               className="md:col-span-3 p-10 py-10 xl:py-20 flex flex-col gap-5"
@@ -94,7 +104,7 @@ const Contact = () => {
                   Name
                 </label>
                 <input
-                  className="bg-transparent outline-none border-b-2 border-gray-300"
+                  className="bg-transparent outline-none border-b-2 border-gray-300 focus:border-visaclr transition-colors"
                   type="text"
                   name="user_name"
                   value={name}
@@ -107,9 +117,8 @@ const Contact = () => {
                   Phone
                 </label>
                 <input
-                  className="bg-transparent outline-none border-b-2 border-gray-300 [&::-webkit-inner-spin-button]:appearance-none"
-                  inputMode="numeric"
-                  type="number"
+                  className="bg-transparent outline-none border-b-2 border-gray-300 focus:border-visaclr transition-colors"
+                  type="tel" 
                   name="user_mobile"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -121,7 +130,7 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
-                  className="bg-transparent outline-none border-b-2 border-gray-300"
+                  className="bg-transparent outline-none border-b-2 border-gray-300 focus:border-visaclr transition-colors"
                   rows={3}
                   name="user_msg"
                   value={message}
@@ -131,23 +140,27 @@ const Contact = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <button
-                  className="w-40 h-11 bg-visaclr rounded-full text-white capitalize hover:bg-visaclrhvr"
+                  className={`w-40 h-11 rounded-full text-white capitalize transition-all ${
+                    isSending
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-visaclr hover:bg-visaclrhvr"
+                  }`}
                   type="submit"
+                  disabled={isSending}
                 >
-                  send
+                  {isSending ? "Sending..." : "Send"}
                 </button>
               </div>
             </form>
           </div>
         </div>
 
-        {/*  */}
-
+        {/* CTA Banner */}
         <div className="h-40 md:h-52 xl:h-96 bg-cta-bg bg-cover rounded-3xl relative overflow-hidden flex justify-center items-center text-white">
           <div className="bg-[#0000009d] absolute top-0 left-0 w-full h-full"></div>
           <div className="relative">
-            <h1 className="text-3xl xl:text-7xl font-PoppinsExtraBold">
-              Visa on Time, <br></br>Guaranteed
+            <h1 className="text-3xl xl:text-7xl font-PoppinsExtraBold text-center">
+              Visa on Time, <br /> Guaranteed
             </h1>
           </div>
         </div>

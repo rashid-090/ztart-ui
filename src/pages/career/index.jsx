@@ -59,7 +59,7 @@ const Career = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-    const serviceId = "service_vokbcvc";
+    const serviceId = "service_wj3pobe";
     const templateId = "template_p69x9u4";
     const publicKey = "Xecq_K13XvtQQK2R3";
 

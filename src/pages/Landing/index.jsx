@@ -122,7 +122,7 @@ const handleSubmit = (e) => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-     const serviceId = "service_z7xu4jk";
+     const serviceId = "service_wj3pobe";
     const templateId = "template_3iadmge";
     const publicKey = "F2kfLKAaSE8fINfl7";
 

@@ -57,7 +57,7 @@ const FastReliable = () => {
           {services.map((service, index) => (
             <div key={index} className="flex flex-col gap-2">
               <div className="flex gap-3 items-center cursor-pointer" onClick={() => toggleParagraph(index)}>
-                <img className="w-7 h-7" src={tick} alt="" />
+                <img className="w-7 h-7" src={tick} alt="Services" />
                 <p className="text-sm xl:text-xl font-PoppinsMedium">{service.title}</p>
               </div>
               <p className={`text-xs md:text-base ${openIndex === index ? "block" : "hidden"} md:block`}>

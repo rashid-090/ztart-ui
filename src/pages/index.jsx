@@ -67,7 +67,7 @@ const test2 = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-     const serviceId = "service_z7xu4jk";
+     const serviceId = "service_wj3pobe";
     const templateId = "template_lm5nfq2";
     const publicKey = "F2kfLKAaSE8fINfl7";
 
@@ -188,7 +188,9 @@ everything, so you can focus on what matters.
             className="relative xl:absolute h-[500px] md:h-full top-0 left-0 w-full object-cover transition-opacity duration-1000"
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
             // ↓ Add these attributes ↓
             width="378"
             height="662"

@@ -201,7 +201,7 @@ const Homenew = () => {
                 index === currentImage ? "opacity-100" : "opacity-0"
               }`}
               src={image}
-              alt=""
+              alt="startvisa"
             />
           ))}
           <div className="bg-[#00000073] absolute top-0 left-0 w-full h-full z-0"></div>
@@ -280,7 +280,7 @@ const Homenew = () => {
               transitionDelay: `${(index * 400) + 200}ms`
             }}
           >
-            <img className="w-12 h-12 object-contain" src={step.icon} alt="" />
+            <img className="w-12 h-12 object-contain" src={step.icon} alt="startvisa" />
             <h4 className="text-xs md:text-sm font-medium">{step.title}</h4>
           </div>
         ))}
@@ -321,7 +321,7 @@ const Homenew = () => {
             <img
               className="aspect-square shadow-2xl rounded-3xl object-cover"
               src={bann2}
-              alt=""
+              alt="startvisa"
             />
             <div className="pt-5 p-2">
               <h3 className=" text-3xl font-PoppinsMedium uppercase">London</h3>
@@ -332,7 +332,7 @@ const Homenew = () => {
             <img
               className="aspect-square shadow-2xl rounded-3xl object-cover"
               src={bann2}
-              alt=""
+              alt="startvisa"
             />
             <div className="pt-5 p-2">
               <h3 className=" text-3xl font-PoppinsMedium uppercase">London</h3>
@@ -343,7 +343,7 @@ const Homenew = () => {
             <img
               className="aspect-square shadow-2xl rounded-3xl object-cover"
               src={bann2}
-              alt=""
+              alt="startvisa"
             />
             <div className="pt-5 p-2">
               <h3 className=" text-3xl font-PoppinsMedium uppercase">London</h3>
@@ -354,7 +354,7 @@ const Homenew = () => {
             <img
               className="aspect-square shadow-2xl rounded-3xl object-cover"
               src={bann2}
-              alt=""
+              alt="startvisa"
             />
             <div className="pt-5 p-2">
               <h3 className=" text-3xl font-PoppinsMedium uppercase">London</h3>
@@ -493,7 +493,7 @@ const Homenew = () => {
         <img
           className="absolute top-0 left-0 h-full w-full object-cover rounded-2xl"
           src={bann1}
-          alt=""
+          alt="startvisa"
         />
         <div className="absolute w-full h-full left-0 top-0 bg-[#00000036] rounded-2xl"></div>
         <div className="py-40 relative text-white p-20 text-center">

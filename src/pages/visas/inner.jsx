@@ -144,7 +144,7 @@ const VisaInner = () => {
     e.preventDefault();
 
     // Your EmailJS service ID, template ID, and Public Key
-     const serviceId = "service_z7xu4jk";
+     const serviceId = "service_wj3pobe";
     const templateId = "template_3iadmge";
     const publicKey = "F2kfLKAaSE8fINfl7";
 
@@ -225,7 +225,7 @@ const VisaInner = () => {
 
               <div className="flex gap-3">
                 <button className="bg-visaclr text-white h-10 xl:h-11 px-6 capitalize text-sm rounded-full hover:bg-visaclrhvr my-3 font-PoppinsSemibold">
-                  <Link to="/">apply now</Link>
+                  <Link to="/contact">apply now</Link>
                 </button>
                 <a
                   href="https://api.whatsapp.com/send?phone=971544404197"
