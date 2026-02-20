@@ -89,7 +89,7 @@ function Footer() {
           <ul className="text-visaclr flex gap-3 mt-5 ml-2 text-2xl">
             <li className="hover:-translate-y-1 duration-200">
               <a
-                href="https://www.instagram.com/start_visa_?igsh=MXQ1b2k3Y3hkM2Yxaw=="
+                href="https://www.instagram.com/startvisa.gcc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
